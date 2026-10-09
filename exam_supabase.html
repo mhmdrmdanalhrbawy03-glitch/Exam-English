@@ -1,0 +1,390 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>الامتحان الملكي الشامل — English Baccalaureate 2</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;800&family=Playfair+Display:wght@600;800&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#f7f1e3;--card:#fffdf8;--ink:#1a2238;--mut:#6b7390;--navy:#0a1630;--gold:#c9a227;--gold2:#f1d77a;--ok:#1b8f55;--bad:#c9443b;--line:#e6d9b3;--chip:#f1e8cc;--sh:0 10px 30px rgba(60,40,0,.12);--glass:rgba(255,253,248,.82);box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#070d1f;--card:#0f1a38;--ink:#eef2ff;--mut:#9aa8d0;--line:#26346a;--chip:#18254d;--sh:0 10px 30px rgba(0,0,0,.45);--glass:rgba(15,26,56,.82)}}
+:root[data-theme="dark"]{--bg:#070d1f;--card:#0f1a38;--ink:#eef2ff;--mut:#9aa8d0;--line:#26346a;--chip:#18254d;--sh:0 10px 30px rgba(0,0,0,.45);--glass:rgba(15,26,56,.82)}
+html{scroll-padding-top:env(safe-area-inset-top,0px)}*{box-sizing:border-box}
+body{margin:0;background:var(--bg);background-image:radial-gradient(circle at 15% 10%,rgba(201,162,39,.10),transparent 40%),radial-gradient(circle at 85% 90%,rgba(60,90,200,.10),transparent 40%);color:var(--ink);font-family:'Cairo','Segoe UI',Tahoma,sans-serif;line-height:1.75;font-size:17px;min-height:100vh}
+.en{direction:ltr;text-align:left}.ff{font-family:'Playfair Display',Georgia,serif}
+.wrap{max-width:980px;margin:0 auto;padding:14px 14px 90px}
+.gt{background:linear-gradient(120deg,var(--gold),var(--gold2),var(--gold));-webkit-background-clip:text;background-clip:text;color:transparent;-webkit-text-fill-color:transparent}
+.hero{position:relative;overflow:hidden;border-radius:26px;padding:42px 20px 36px;text-align:center;color:#fff;background:linear-gradient(135deg,#050b1c,#10285a 55%,#050b1c);border:2px solid var(--gold);box-shadow:var(--sh),inset 0 0 0 6px rgba(201,162,39,.12)}
+.hero:before,.hero:after{content:"";position:absolute;border-radius:50%;background:radial-gradient(circle,rgba(241,215,122,.28),transparent 70%);animation:fl 8s ease-in-out infinite}.hero:before{width:260px;height:260px;top:-90px;left:-70px}.hero:after{width:200px;height:200px;bottom:-70px;right:-40px;animation-delay:3s}
+@keyframes fl{50%{transform:translateY(24px) scale(1.15)}}.hero>*{position:relative;z-index:1}
+.crown{font-size:50px;filter:drop-shadow(0 4px 10px rgba(241,215,122,.6))}
+.hero h1{margin:4px 0 2px;font-size:clamp(28px,6vw,48px);font-weight:800}
+.hero .sub{color:#c9d6ff;font-size:17px;letter-spacing:.5px}
+.orn{display:flex;align-items:center;gap:10px;justify-content:center;color:var(--gold2);margin:12px 0}.orn:before,.orn:after{content:"";height:2px;width:90px;background:linear-gradient(90deg,transparent,var(--gold2),transparent)}
+.patron{display:inline-block;margin-top:6px;border:2px solid var(--gold);border-radius:16px;padding:10px 30px;background:rgba(10,22,48,.7)}.patron small{display:block;color:var(--gold2);letter-spacing:2px}.patron b{font-size:clamp(20px,4.5vw,30px);font-weight:800}
+.card{background:var(--card);border:1.5px solid var(--line);border-radius:22px;padding:22px;margin-top:16px;box-shadow:var(--sh);position:relative}
+.card.gold{border-color:var(--gold);box-shadow:var(--sh),0 0 0 4px rgba(201,162,39,.12)}
+h2{margin:0 0 8px;font-weight:800}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(130px,1fr));gap:12px;margin:14px 0}
+.stat{background:var(--chip);border:1px solid var(--line);border-radius:16px;padding:12px;text-align:center}.stat b{display:block;font-size:26px;font-family:'Playfair Display',Georgia,serif;color:var(--ink)}
+input[type=text]{width:100%;padding:15px;font-size:19px;border:2px solid var(--line);border-radius:14px;background:var(--bg);color:var(--ink);font-family:inherit;transition:.2s}input[type=text]:focus,textarea:focus{outline:0;border-color:var(--gold);box-shadow:0 0 0 4px rgba(201,162,39,.2)}
+button{font-family:inherit;font-size:17px;border:0;border-radius:14px;padding:13px 22px;cursor:pointer;font-weight:800;transition:.2s}
+.btn{position:relative;overflow:hidden;background:linear-gradient(135deg,var(--gold),var(--gold2),var(--gold));color:#2a1d00;box-shadow:0 6px 18px rgba(201,162,39,.4)}
+.btn:after{content:"";position:absolute;top:0;left:-60%;width:40%;height:100%;background:rgba(255,255,255,.55);transform:skewX(-20deg);animation:sh 3.2s infinite}@keyframes sh{60%,100%{left:140%}}
+.btn2{background:var(--chip);color:var(--ink);border:1px solid var(--line)}.btn3{background:linear-gradient(135deg,#b3322a,#e2574d);color:#fff}.wa{background:linear-gradient(135deg,#128c4a,#25d366);color:#fff;box-shadow:0 6px 18px rgba(37,211,102,.35)}
+button:disabled{opacity:.45;cursor:not-allowed;transform:none}.big{width:100%;font-size:21px;padding:17px;margin-top:16px}
+#top{position:sticky;top:0;z-index:5;background:var(--glass);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);border-bottom:2px solid var(--gold);padding:10px 14px;padding-top:calc(10px + env(safe-area-inset-top,0px));display:flex;gap:12px;align-items:center;justify-content:space-between;flex-wrap:wrap}
+#timer{font-size:26px;font-weight:800;font-variant-numeric:tabular-nums;direction:ltr;font-family:'Playfair Display',Georgia,serif;color:var(--ink);background:var(--chip);border:1.5px solid var(--gold);border-radius:14px;padding:2px 18px}#timer.low{color:#fff;background:var(--bad);animation:pl 1s infinite}@keyframes pl{50%{opacity:.6}}
+.bar{height:10px;background:var(--chip);border-radius:9px;overflow:hidden;flex:1;min-width:120px}.bar i{display:block;height:100%;background:linear-gradient(90deg,var(--gold),var(--ok));width:0;transition:width .4s}
+.nav{display:grid;grid-template-columns:repeat(auto-fill,minmax(44px,1fr));gap:7px}.nav button{padding:8px 0;background:var(--chip);color:var(--ink);font-size:15px;border:2px solid transparent}.nav .ans{background:rgba(27,143,85,.2);color:var(--ok)}.nav .flag{border-color:var(--gold)}.nav .cur{outline:3px solid var(--gold);outline-offset:1px}
+.sec{display:inline-block;background:linear-gradient(135deg,var(--navy),#1b3a80);color:var(--gold2);border:1px solid var(--gold);border-radius:20px;padding:2px 16px;font-size:14px;font-weight:700}
+.passage{direction:ltr;text-align:left;background:var(--chip);border-left:6px solid var(--gold);border-radius:14px;padding:16px;margin:14px 0;font-family:'Playfair Display',Georgia,serif;font-size:18px;line-height:1.85}
+.q{direction:ltr;text-align:left;font-size:22px;font-weight:700;margin:14px 0;font-family:'Playfair Display',Georgia,serif;line-height:1.5}
+.opt{display:flex;gap:12px;align-items:center;width:100%;text-align:left;direction:ltr;background:var(--bg);color:var(--ink);border:2px solid var(--line);margin:10px 0;padding:13px 16px;font-size:19px;font-weight:600}.opt i{font-style:normal;flex:none;width:34px;height:34px;border-radius:50%;display:grid;place-items:center;background:var(--chip);border:1.5px solid var(--gold);font-weight:800}
+.opt:hover{border-color:var(--gold)}.opt.sel{border-color:var(--gold);background:rgba(201,162,39,.16)}.opt.sel i{background:var(--gold);color:#2a1d00}
+.opt.right{border-color:var(--ok);background:rgba(27,143,85,.16)}.opt.wrong{border-color:var(--bad);background:rgba(201,68,59,.15)}
+.hint{color:var(--mut);font-size:15px}.row{display:flex;gap:10px;flex-wrap:wrap;margin-top:16px}.row>*{flex:1;min-width:130px}
+textarea{width:100%;min-height:240px;padding:15px;font-size:18px;line-height:1.75;border:2px solid var(--line);border-radius:14px;background:var(--bg);color:var(--ink);font-family:'Playfair Display',Georgia,serif;resize:vertical}
+.wc{display:flex;justify-content:space-between;flex-wrap:wrap;gap:8px;margin:8px 0;font-size:15px;color:var(--mut)}
+.chips{display:flex;gap:6px;flex-wrap:wrap;margin:6px 0}.chip{background:var(--chip);border-radius:20px;padding:3px 13px;font-size:14px;border:1px solid var(--line)}.chip.on{background:var(--ok);color:#fff;border-color:var(--ok)}
+.tag{background:linear-gradient(135deg,var(--gold),var(--gold2));color:#2a1d00;border-radius:9px;padding:2px 12px;font-size:14px;font-weight:800}
+.guide{background:rgba(201,162,39,.14);border-right:5px solid var(--gold);border-radius:12px;padding:10px 14px;margin:12px 0;font-size:16px}
+.model{direction:ltr;text-align:left;background:rgba(27,143,85,.12);border-left:5px solid var(--ok);border-radius:12px;padding:12px 14px;margin:8px 0;white-space:pre-wrap;font-family:'Playfair Display',Georgia,serif}
+.mine{direction:ltr;text-align:left;background:var(--chip);border-radius:12px;padding:12px 14px;margin:8px 0;white-space:pre-wrap;font-family:'Playfair Display',Georgia,serif}
+.ck{display:flex;gap:10px;align-items:center;margin:7px 0;cursor:pointer}.ck input{width:22px;height:22px;accent-color:var(--gold)}
+.rv{border-right:7px solid;border-radius:14px;padding:13px 15px;margin:11px 0;background:var(--bg)}.rv.ok{border-color:var(--ok)}.rv.no{border-color:var(--bad)}.rv .ex{color:var(--mut);font-size:15.5px;margin-top:6px}
+.hidden{display:none!important}.pop{animation:pop .4s ease}@keyframes pop{from{opacity:0;transform:translateY(16px) scale(.98)}to{opacity:1;transform:none}}
+.modes{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin:16px 0}.mode{border:2px solid var(--line);border-radius:18px;padding:14px;cursor:pointer;background:var(--bg);text-align:center;transition:.25s}.mode.on{border-color:var(--gold);background:rgba(201,162,39,.16);box-shadow:0 10px 22px rgba(201,162,39,.28)}.mode b{display:block;font-size:19px}.mode span{font-size:14px;color:var(--mut)}
+.cert{text-align:center;background:var(--card);border-radius:24px;padding:34px 20px;margin-top:16px;border:3px double var(--gold);box-shadow:var(--sh),inset 0 0 0 8px rgba(201,162,39,.1)}
+.cert small{letter-spacing:4px;color:var(--gold);font-weight:700}.cert h1{margin:6px 0;font-size:clamp(26px,5.5vw,42px);font-weight:800}
+.seal{width:170px;height:170px;border-radius:50%;margin:16px auto;display:grid;place-items:center;position:relative;box-shadow:0 8px 24px rgba(201,162,39,.4)}.seal span{width:136px;height:136px;border-radius:50%;background:var(--card);display:grid;place-items:center;font-size:40px;font-weight:800;font-family:'Playfair Display',Georgia,serif}
+.sb{margin:10px 0;text-align:right}.sb div{display:flex;justify-content:space-between;font-size:15px}.sb i{display:block;height:13px;background:var(--chip);border-radius:9px;overflow:hidden;margin-top:3px}.sb u{display:block;height:100%;width:0;border-radius:9px;background:linear-gradient(90deg,var(--gold),var(--gold2));transition:width 1.3s cubic-bezier(.2,.8,.2,1)}
+.bd{display:inline-block;background:linear-gradient(135deg,var(--gold),var(--gold2));color:#2a1d00;border-radius:22px;padding:6px 16px;margin:4px;font-weight:800;font-size:15px;animation:pop .5s ease both}
+.send{border-color:#25d366;background:rgba(37,211,102,.08)}
+.opt.right:after{content:" ✔";color:var(--ok)}.opt.wrong:after{content:" ✖";color:var(--bad)}
+.locked{filter:blur(10px);pointer-events:none;user-select:none}
+.tg{position:fixed;bottom:calc(14px + env(safe-area-inset-bottom,0px));left:14px;z-index:9;width:50px;height:50px;border-radius:50%;padding:0;background:var(--navy);color:var(--gold2);border:2px solid var(--gold);font-size:22px;box-shadow:0 6px 16px rgba(0,0,0,.35)}
+#cv{position:fixed;inset:0;pointer-events:none;z-index:50}
+dialog{border:2px solid var(--gold);border-radius:22px;padding:24px;max-width:94vw;width:520px;background:var(--card);color:var(--ink);box-shadow:0 24px 70px rgba(0,0,0,.5);font-family:inherit}dialog::backdrop{background:rgba(3,8,24,.78);backdrop-filter:blur(4px)}
+pre{direction:rtl;text-align:right;white-space:pre-wrap;background:var(--chip);border-radius:12px;padding:12px;font-family:inherit;font-size:14px;max-height:190px;overflow:auto;margin:10px 0}
+.step{display:flex;gap:10px;align-items:flex-start;margin:6px 0;font-size:15.5px}.step>b{flex:none;width:28px;height:28px;border-radius:50%;background:var(--gold);color:#2a1d00;display:grid;place-items:center}
+dialog .gt,.cert .gt{background:none;-webkit-text-fill-color:var(--ink);color:var(--ink)}
+.cert h1:after{content:"";display:block;width:120px;height:4px;margin:8px auto 0;background:linear-gradient(90deg,var(--gold),var(--gold2));border-radius:4px}
+a.abtn{display:block;text-align:center;text-decoration:none;padding:13px 22px;border-radius:14px;font-weight:800;font-size:17px;flex:1;min-width:130px}
+.foot{margin-top:26px;text-align:center;color:var(--mut);font-size:14px;border-top:2px solid var(--gold);padding-top:14px}.foot b{color:var(--ink)}
+#gmsg{min-height:130px;font-size:14px;font-family:inherit;direction:rtl;margin:10px 0}
+#sub.lk{background:linear-gradient(135deg,#6b7390,#8892b3);color:#fff}
+.wi{width:22px;height:22px;vertical-align:-4px;margin-inline-end:4px}
+.wafab{position:fixed;bottom:calc(14px + env(safe-area-inset-bottom,0px));right:14px;z-index:9;display:flex;align-items:center;gap:8px;background:#25d366;color:#fff;text-decoration:none;border-radius:40px;padding:8px 16px 8px 10px;font-weight:800;font-size:14px;box-shadow:0 6px 18px rgba(37,211,102,.5);direction:ltr}
+.wafab svg{width:34px;height:34px;flex:none}.wafab:before{content:"";position:absolute;inset:0;border-radius:40px;box-shadow:0 0 0 0 rgba(37,211,102,.6);animation:wp 2.4s infinite}@keyframes wp{70%{box-shadow:0 0 0 14px rgba(37,211,102,0)}100%{box-shadow:0 0 0 0 rgba(37,211,102,0)}}
+.wafab span small{display:block;font-size:11px;font-weight:600;opacity:.9;line-height:1.1}
+@media print{.wafab{display:none!important}}
+#all .card{margin-top:14px;padding:16px 18px}.qcard{border-right:6px solid var(--line);transition:border-color .3s}.qcard.done{border-right-color:var(--ok)}
+.sechead{margin:26px 0 0;padding:12px 18px;border-radius:16px;background:linear-gradient(135deg,var(--navy),#1b3a80);color:var(--gold2);font-weight:800;font-size:19px;border:1.5px solid var(--gold)}
+.sechead small{display:block;color:#c9d6ff;font-weight:600;font-size:14px}
+.qh{display:flex;gap:10px;align-items:center;margin-bottom:2px}.qn{background:var(--gold);color:#2a1d00;border-radius:50%;min-width:34px;height:34px;display:grid;place-items:center;font-weight:800}
+@media print{#top,.row,.nav,.tg,.send{display:none!important}}
+</style>
+</head>
+<body>
+<div id="top" class="hidden"><div><b id="who"></b><div class="hint">تحت رعاية: محمد رمضان الحرباوي</div></div><div class="bar"><i id="pb"></i></div><div class="hint" id="cnt2"></div><div id="timer">120:00</div></div>
+<div class="wrap">
+<section id="start" class="pop">
+ <div class="hero"><div class="crown">👑</div><h1 class="gt ff">الامتحان الملكي الشامل</h1><div class="sub en ff" dir="ltr">The Royal Examination · English Baccalaureate 2</div><div class="orn">✦ ✦ ✦</div><div class="patron"><small>تحت رعاية</small><b>محمد رمضان الحرباوي</b></div></div>
+ <div class="card gold">
+  <div class="grid"><div class="stat"><b id="nq">—</b>سؤال</div><div class="stat"><b id="dur">90</b>دقيقة</div><div class="stat"><b id="ne">—</b>مقالي</div><div class="stat"><b>5</b>أقسام</div></div>
+  <p><b>تعليمات:</b> الامتحان بيشمل Reading وVocabulary وGrammar وإجابات قصيرة وقسم مقالي بأساليب مختلفة (JRE · Analyze · Evaluate · Explain · Compare · Analytical Paragraph · Diary · Opinion · Bias). كل الأسئلة قدامك في صفحة واحدة، اتحرك بالسكرول وجاوب. <b>لما الوقت يخلص الامتحان بيتسلّم تلقائيًا</b> بالإجابات اللي وصلت لها.</p>
+  <div class="guide" style="background:rgba(27,143,85,.12);border-color:var(--ok)"><b>📚 مبني على منهج الكتاب:</b> مفردات كل درس (Word · Synonym · Antonym · Word Family · Collocations · Notice the Difference)، ونصوص ودروس الوحدة 1 والوحدة 2، وجرامر الكتاب: Relative Clauses · Participial Phrases · Conditionals · Verb Patterns، وأساليب أسئلة الكتاب (JRE · Analyze · Evaluate · Explain).</div>
+  <div class="guide"><b>⚠ مهم:</b> في آخر الامتحان <b>إرسال النتيجة لمدرّسك إجباري</b> — النتيجة والمراجعة مش هتظهر غير بعد الإرسال. هيتم إرسال اسمك ودرجتك وإحصائياتك.</div>
+  <label for="nm"><b>اكتب اسمك بالكامل:</b></label><input id="nm" type="text" placeholder="اسم الطالب" autocomplete="name">
+  <button class="btn big" id="go">ابدأ الامتحان ✦</button>
+ </div>
+</section>
+<section id="exam" class="hidden"><div id="all"></div>
+ <div class="card gold"><div class="hint" id="rem" style="margin-bottom:8px"></div><button class="btn3 big" id="sub">تسليم الامتحان ✔</button></div></section>
+<section id="res" class="hidden locked">
+ <div class="cert"><div style="font-size:42px" id="emo"></div><small class="ff">CERTIFICATE OF PERFORMANCE</small><h1 class="gt" id="rname"></h1><div class="hint">تحت رعاية: <b>محمد رمضان الحرباوي</b></div>
+  <div class="seal" id="ring"><span id="pct"></span></div><h2 id="msg"></h2><div class="grid" id="stats"></div><div id="bars"></div><div id="bds"></div></div>
+ <div class="card send"><h2>📲 إرسال النتيجة النهائية</h2><p>بعد ما تقيّم المقالي بالـ checklist تحت، ابعت النتيجة النهائية لمدرّسك على <b class="en" dir="ltr">01500492203</b>.</p><div class="row"><a class="btn wa abtn" id="wa" target="_blank" rel="noopener noreferrer"><svg class="wi" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg> واتساب</a><a class="btn2 abtn" id="wa2" target="_blank" rel="noopener noreferrer">رابط بديل</a><a class="btn2 abtn" id="sms">SMS ✉</a><button class="btn2" id="cp">نسخ الرسالة 📋</button></div><div class="hint" id="sent"></div></div>
+ <div class="card"><h2>✍ المقالي — إجابات نموذجية وتقييم ذاتي</h2><p class="hint">قارن إجابتك بالنموذج وعلّم على البنود اللي حققتها — الدرجة بتتحدّث لحظيًا.</p><div id="ess"></div></div>
+ <div class="card"><h2>مراجعة الأسئلة الموضوعية</h2><div id="rev"></div></div>
+ <div class="row"><button class="btn big" onclick="location.reload()">إعادة الامتحان 🔄</button></div>
+</section>
+<footer class="foot">جميع الحقوق محفوظة © <b>محمد رمضان الحرباوي</b></footer>
+</div>
+<a class="wafab" id="fab" href="https://wa.me/201500492203?text=%D8%A7%D9%84%D8%B3%D9%84%D8%A7%D9%85%20%D8%B9%D9%84%D9%8A%D9%83%D9%85%D8%8C%20%D8%B9%D9%86%D8%AF%D9%8A%20%D8%A7%D8%B3%D8%AA%D9%81%D8%B3%D8%A7%D8%B1%20%D8%A8%D8%AE%D8%B5%D9%88%D8%B5%20%D8%A7%D9%84%D8%A7%D9%85%D8%AA%D8%AD%D8%A7%D9%86" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp"><svg class="wi" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg><span>01500492203<small>تواصل واتساب</small></span></a>
+<button class="tg" id="tg" aria-label="theme">🌓</button><canvas id="cv"></canvas>
+<dialog id="dlg"><h3>تسليم الامتحان؟</h3><p id="dmsg"></p><div class="row"><button class="btn2" id="dno">رجوع</button><button class="btn3" id="dyes">تسليم نهائي</button></div></dialog>
+<dialog id="gate"><h2 class="gt">📲 إرسال النتيجة — إجباري</h2>
+ <div class="step"><b>1</b><span>اضغط <b>واتساب</b> — هيفتح برسالة جاهزة على الرقم <b class="en" dir="ltr">01500492203</b> واضغط <b>إرسال</b>.</span></div>
+ <div class="step"><b>2</b><span>لو مفتحش: جرّب <b>رابط بديل</b>، أو اضغط <b>نسخ الرسالة</b> وابعتها يدويًا على نفس الرقم.</span></div>
+ <div class="step"><b>3</b><span>علّم على تأكيد الإرسال تحت عشان تفتح لك النتيجة والإجابات.</span></div>
+ <textarea id="gmsg" readonly></textarea><div class="hint" id="gst"></div>
+ <div class="row"><a class="btn wa abtn" id="gwa" target="_blank" rel="noopener noreferrer"><svg class="wi" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg> واتساب</a><a class="btn2 abtn" id="gwa2" target="_blank" rel="noopener noreferrer">رابط بديل</a><a class="btn2 abtn" id="gsms">SMS ✉</a></div>
+ <div class="row"><button class="btn2" id="gcp">نسخ الرسالة 📋</button><button class="btn2" id="gnum">نسخ الرقم 📞</button></div>
+ <label class="ck" style="margin-top:12px"><input type="checkbox" id="gck"><b>أؤكد إني بعتّ نتيجتي لمدرّسي</b></label>
+ <button class="btn big" id="gok" disabled>عرض النتيجة والإجابات ←</button></dialog>
+<script>
+const P1="Many teenagers spend several hours a day on social media, where they see photos of friends, celebrities and influencers. Psychologists warn that these images are often carefully chosen and edited, so they give a false picture of real life. Teenagers who constantly compare themselves with these perfect images may feel dissatisfied with their appearance and lower their self-esteem. Experts, however, say that social media is not harmful in itself. Teenagers who think critically about what they see, and who balance screen time with sleep, exercise and face-to-face friendships, are less likely to suffer. Schools and families also have a responsibility to teach media literacy and to provide support.";
+const R="Reading", V="Vocabulary", G="Grammar", W="Short Writing", E="Essay (مقالي)";
+const P2="Many teenagers spend their free time scrolling through their phones. Researchers say that creative hobbies such as drawing, music and writing are far more valuable. During creative activities, people enter a state called flow, in which they forget their worries and lose track of time. Studies show that thirty minutes a day of such activities can reduce stress. Creative hobbies also develop cognitive flexibility and teach teenagers to accept failure as part of learning. Unlike passive screen entertainment, they encourage young people to produce rather than consume, and they connect them with their cultural heritage.";
+const mc=(s,p,q,o,a,e)=>({s,p,q,o,a,e});
+const Q=[
+mc(R,P1,"Why do the images on social media give a false picture of life?",["They are carefully chosen and edited","They are always very old","They are posted only by strangers","They are not allowed by schools"],0,"الصور مختارة ومعدّلة بعناية فبتدي صورة مزيّفة."),
+mc(R,P1,"What may happen to teenagers who constantly compare themselves with perfect images?",["They become more confident","They may feel dissatisfied and have lower self-esteem","They sleep better","They stop using phones"],1,"المقارنة المستمرة = عدم رضا وانخفاض تقدير الذات."),
+mc(R,P1,"According to the text, how can teenagers protect themselves?",["By deleting all their accounts","By spending more time online","By thinking critically and balancing screen time with sleep, exercise and friendships","By ignoring their families"],2,"تفكير نقدي + توازن."),
+mc(R,P1,"Who else has a responsibility, besides teenagers?",["Only celebrities","Schools and families","Only psychologists","No one"],1,"المدارس والأسر تعلّم media literacy وتقدّم الدعم."),
+mc(R,P1,"“Social media is not harmful in itself” suggests that ______.",["it is always safe","it is harmful only when used without balance or critical thinking","it should be banned","it has no effects"],1,"Inference: المشكلة في طريقة الاستخدام."),
+mc(R,P2,"What is “flow”?",["A type of music","A state of complete absorption in an activity","A school subject","A kind of failure"],1,"flow = استغراق كامل في النشاط."),
+mc(R,P2,"How long can creative activity each day reduce stress, according to studies?",["Ten minutes","Thirty minutes","Two hours","One minute"],1,"thirty minutes a day."),
+mc(R,P2,"How do creative hobbies differ from passive screen entertainment?",["They encourage people to produce rather than only consume","They cost less money","They are shorter","They are only for adults"],0,"produce rather than consume."),
+mc(R,P2,"Creative hobbies teach teenagers to ______.",["avoid all mistakes","accept failure as part of learning","stop learning","work alone only"],1,"accept failure as part of learning."),
+mc(R,P2,"The word “heritage” in the text is closest in meaning to ______.",["cultural traditions passed down","new technology","weather","homework"],0,"heritage = تراث."),
+mc(V,0,"Posting only the best moments so that life looks perfect is the ______ effect.",["highlight-reel","neutral","hedging","rural"],0,"highlight-reel effect."),
+mc(V,0,"“This method may help some students” is an example of ______ language.",["biased","hedging","aggressive","intensifying"],1,"may / some = hedging."),
+mc(V,0,"A ______ lifestyle means sitting down for most of the day.",["sedentary","mindful","balanced","creative"],0,"sedentary = خامل."),
+mc(V,0,"Sleep is often ______ although it is very important.",["underestimated","overestimated","measured","boosted"],0,"underestimated = مُستهان به."),
+mc(V,0,"A gentle push that guides people to a healthier choice is a ______.",["barrier","nudge","failure","ban"],1,"nudge."),
+mc(V,0,"Families that put the group's needs first are ______.",["individualistic","collectivist","urban","targeted"],1,"collectivist ≠ individualistic."),
+mc(V,0,"The opposite of “urban” is ______.",["rural","primary","decisive","variable"],0,"urban ≠ rural."),
+mc(V,0,"A state of complete absorption in an activity is called ______.",["flow","failure","fatigue","bias"],0,"flow."),
+mc(V,0,"The actors held a ______ before the opening night.",["rehearsal","heritage","campaign","symptom"],0,"rehearsal = بروفة."),
+mc(V,0,"Antonym of “persevere” is ______.",["continue","give up","insist","try"],1,"persevere ≠ give up."),
+mc(V,0,"No screen can ______ the real feeling of playing football outdoors.",["replicate","withdraw","benefit","insist"],0,"replicate = يقلّد بدقة."),
+mc(V,0,"A person's overall opinion of their own worth is their ______.",["self-esteem","pressure","platform","fatigue"],0,"self-esteem."),
+mc(V,0,"Words like “terrible” and “completely useless” are examples of ______ language.",["neutral","biased","balanced","objective"],1,"لغة متحيّزة."),
+mc(V,0,"A feeling of extreme tiredness is ______.",["fatigue","resilience","nutrition","bias"],0,"fatigue = إرهاق."),
+mc(V,0,"A person who publicly supports a cause is an ______.",["advocate","opponent","acquaintance","observer"],0,"advocate."),
+mc(V,0,"A game that is very hard to stop playing is ______.",["addictive","fulfilling","creative","mindful"],0,"addictive."),
+mc(V,0,"Parents should set clear ______ for screen time.",["boundaries","benefits","symptoms","rehearsals"],0,"boundaries = حدود."),
+mc(V,0,"The ability to continue a difficult activity for a long time is ______.",["endurance","access","motivation","bias"],0,"endurance = تحمّل."),
+mc(V,0,"Antonym of “authentic” is ______.",["genuine","fake","real","honest"],1,"authentic ≠ fake."),
+mc(V,0,"Working together to achieve a shared goal is ______.",["collaboration","competition","rehearsal","stillness"],0,"collaboration."),
+mc(G,0,"The girl ______ is singing is my cousin.",["which","who","whose","where"],1,"who للأشخاص."),
+mc(G,0,"Ali, ______ father is a doctor, joined us.",["who","whose","which","that"],1,"whose = ملكية؛ non-defining فمفيش that."),
+mc(G,0,"The students ______ in the library are preparing for the exam.",["studied","studying","who studying","are studying"],1,"V-ing (اختصار)."),
+mc(G,0,"______ the report, she sent it to her manager.",["Finish","Having finished","Finished having","To finishing"],1,"Having + V3."),
+mc(G,0,"If I ______ you, I would apologise.",["am","was being","were","will be"],2,"Second conditional: were."),
+mc(G,0,"If he had studied, he ______ passed.",["would","would have","will have","had"],1,"Third conditional."),
+mc(G,0,"______ you need help, call me.",["Should","Had","Were","Unless"],0,"Inversion: Should."),
+mc(G,0,"You will fail ______ you work harder.",["unless","if","in case","when"],0,"unless = if not."),
+mc(G,0,"She enjoys ______ portraits.",["draw","to draw","drawing","drew"],2,"enjoy + V-ing."),
+mc(G,0,"I look forward to ______ you soon.",["see","seeing","to see","saw"],1,"look forward to + V-ing."),
+mc(G,0,"The coach made the players ______ for an hour.",["run","to run","running","ran"],0,"make + obj + bare inf."),
+mc(G,0,"The garden needs ______.",["water","watering","to watering","watered up"],1,"need + V-ing."),
+mc(G,0,"This is the café ______ we first met.",["where","when","whose","who"],0,"where للمكان."),
+mc(G,0,"The report ______ by the manager was very long.",["written","writing","who wrote","was writing"],0,"V3 (اختصار مبني للمجهول)."),
+mc(G,0,"______ by his teacher, Ali felt proud.",["Praising","Praised","Praise","To praise"],1,"Participle ماضي."),
+mc(G,0,"If it rains tomorrow, we ______ at home.",["would stay","will stay","stayed","would have stayed"],1,"First conditional."),
+mc(G,0,"If they had left earlier, they ______ the train.",["would catch","would have caught","will catch","caught"],1,"Third conditional."),
+mc(G,0,"______ I known the answer, I would have told you.",["Had","Should","Were","If"],0,"Inversion للثالث: Had."),
+mc(G,0,"He suggested ______ to the cinema.",["to go","going","go","went"],1,"suggest + V-ing."),
+mc(G,0,"I heard him ______ the whole song.",["sing","singing","to sing","sang to"],0,"الحدث كامل = bare infinitive."),
+{s:W,q:"Rewrite with “Unless”: If you don't study, you won't pass.",t:["unless you study, you won't pass","unless you study, you will not pass"],e:"Unless you study, you won't pass."},
+{s:W,q:"Combine with “whose”: I know a boy. His father is a pilot.",t:["i know a boy whose father is a pilot"],e:"I know a boy whose father is a pilot."},
+{s:W,q:"Rewrite with Having + V3: After he had eaten, he left.",t:["having eaten, he left"],e:"Having eaten, he left."},
+{s:W,q:"Rewrite with inversion: If it had rained, we would have stayed at home.",t:["had it rained, we would have stayed at home","had it rained, we would have stayed home"],e:"Had it rained, we would have stayed at home."},
+{s:W,q:"Write ONE word: Teenagers need ______ to cope with pressure. (resilient)",t:["resilience"],e:"resilience (noun)."},
+{s:W,q:"Rewrite with “in case”: Take an umbrella because it may rain.",t:["take an umbrella in case it rains","take an umbrella in case it may rain"],e:"Take an umbrella in case it rains."},
+{s:W,q:"Reduce the clause: The girl who is playing the piano is my sister.",t:["the girl playing the piano is my sister"],e:"The girl playing the piano is my sister."},
+{s:W,q:"Write ONE word: If I ______ a bird, I would fly to Cairo.",t:["were"],e:"were (Second conditional)."}
+];
+
+const RR=(l,p,q,o,a,e)=>({s:R,l,p,q,o,a,e}),VV=(l,q,o,a,e)=>({s:V,l,q,o,a,e}),GG=(l,q,o,a,e)=>({s:G,l,q,o,a,e});
+const P3="Experts recommend that teenagers do at least sixty minutes of moderate-to-hard physical activity every day. Exercise releases endorphins, which reduce stress and improve mood. However, a study led by the WHO found that more than 80% of teenagers do not reach this level, mainly because of sedentary screen habits. Nutrition and sleep matter too: a balanced diet with less processed food gives energy, and teenagers need eight to ten hours of sleep. Those who sleep fewer than seven hours are more likely to experience anxiety and depression.";
+const P4="Some people believe that health is a personal responsibility because individuals have agency and can choose their habits. Those with an internal locus of control believe that their own actions decide the outcomes, and high self-efficacy helps them keep healthy behaviours. Others argue that structural barriers, such as expensive sports facilities or the lack of safe parks, limit real choice. A third view says that responsibility is shared between individuals, families, schools and governments, and that small nudges can make healthy choices easier without taking away freedom.";
+const P5="A survey of 450 Egyptian teenagers aged 14 to 17, from urban and rural schools in five governorates, found that 68% had moderate to high stress during exams. The main causes were academic pressure (82%), social media comparison (61%), lack of sleep (57%) and family expectations (49%). Teenagers who exercised for 30 minutes four times a week had about 34% lower stress. While 74% of urban schools offered counseling, only 31% of rural schools did.";
+const P6="The WHO recommends sixty minutes of daily activity for young people aged five to seventeen, but a 2024 survey by Egypt's Ministry of Youth and Sports found that fewer than one in three secondary students meet the target. Sport also builds life skills such as losing gracefully, supporting teammates and persevering. Some young people lack access because of cost or location. Researchers say that enjoyment, not pressure, is the strongest reason people stay active for life.";
+const addR=[
+RR("Unit 1 · L2",P3,"How much physical activity do experts recommend daily?",["Ten minutes","At least 60 minutes of moderate-to-hard activity","Two hours of rest","Only weekend exercise"],1,"60 دقيقة نشاط متوسط للقوي يوميًا."),
+RR("Unit 1 · L2",P3,"Why do more than 80% of teenagers fail to reach this level?",["They dislike food","Mainly because of sedentary screen habits","Schools forbid sport","They sleep too much"],1,"السبب: عادات خاملة أمام الشاشات."),
+RR("Unit 1 · L2",P3,"What do endorphins do?",["Reduce stress and improve mood","Cause fatigue","Make food processed","Reduce sleep"],0,"endorphins تقلّل التوتر وتحسّن المزاج."),
+RR("Unit 1 · L2",P3,"Teenagers who sleep fewer than seven hours are more likely to ______.",["win competitions","experience anxiety and depression","eat less sugar","become mindful"],1,"قلة النوم مرتبطة بالقلق والاكتئاب."),
+RR("Unit 1 · L3",P4,"What does “internal locus of control” mean?",["Believing outside forces decide everything","Believing your own actions decide outcomes","Having no responsibility","Following the group"],1,"اعتقاد إن أفعالك أنت اللي تحدد النتائج."),
+RR("Unit 1 · L3",P4,"Which is an example of a structural barrier?",["High self-efficacy","A neighbourhood with no safe parks","A balanced diet","A strong will"],1,"عائق في البيئة يحدّ من الاختيار."),
+RR("Unit 1 · L3",P4,"The “shared responsibility” view says that ______.",["only individuals are responsible","only the government is responsible","individuals, families, schools and governments all have a role","nobody is responsible"],2,"المسؤولية مشتركة."),
+RR("Unit 1 · L3",P4,"What is the purpose of a nudge?",["To force people to change","To make healthy choices easier without removing freedom","To ban unhealthy food","To punish people"],1,"nudge = دفعة لطيفة بدون إجبار."),
+RR("Unit 1 · L4",P5,"What percentage of teenagers had moderate to high stress during exams?",["34%","49%","68%","82%"],2,"68%."),
+RR("Unit 1 · L4",P5,"What was the most common cause of stress?",["Academic pressure","Lack of sleep","Family expectations","Social media comparison"],0,"الضغط الدراسي 82% أولًا."),
+RR("Unit 1 · L4",P5,"What percentage of rural schools offered counseling?",["74%","31%","61%","57%"],1,"31% فقط في الريف مقابل 74% في الحضر."),
+RR("Unit 1 · L4",P5,"Teenagers who exercised 30 minutes four times a week had ______.",["higher stress","about 34% lower stress","the same stress","no exams"],1,"أقل بنحو 34%."),
+RR("Unit 2 · L3",P6,"How many secondary students meet the target, according to the 2024 survey?",["Most of them","Fewer than one in three","All of them","Exactly half"],1,"أقل من 1 من كل 3."),
+RR("Unit 2 · L3",P6,"Which is a life skill that sport builds?",["Losing gracefully","Using processed food","Avoiding teammates","Staying indoors"],0,"lose gracefully = يخسر بتهذيب."),
+RR("Unit 2 · L3",P6,"Why do some young people lack access to sport?",["Because of cost or location","Because they are lazy","Because sport is illegal","Because of homework only"],0,"التكلفة أو المكان."),
+RR("Unit 2 · L3",P6,"According to researchers, what keeps people active for life?",["Pressure","Competition only","Enjoyment","Punishment"],2,"المتعة enjoyment.")
+];
+const addV=[
+VV("Unit 1 · L1","Synonym of “transform”:",["maintain","reshape","retain","preserve"],1,"transform = change, reshape, alter."),
+VV("Unit 1 · L1","Antonym of “unrealistic”:",["impractical","unreasonable","achievable","extreme"],2,"unrealistic ≠ practical / achievable."),
+VV("Unit 1 · L1","Antonym of “hedging”:",["caution","certainty","reservation","doubt"],1,"hedging ≠ certainty / confidence."),
+VV("Unit 1 · L1","A rhetorical question is a question that ______.",["needs a long answer","is asked for effect, not to get an answer","is always wrong","is written in a test"],1,"سؤال بلاغي للتأثير."),
+VV("Unit 1 · L1","The ______ of identity happens during the teenage years. (form)",["formative","formation","formal","forming of"],1,"form → formation (noun)."),
+VV("Unit 1 · L1","Heavy screen use can ______ a teenager's mood. (verb)",["effect","affect","effective","affection"],1,"affect (verb) / effect (noun)."),
+VV("Unit 1 · L1","He is very ______ to criticism and gets upset quickly.",["sensible","sensitive","sense","sensation"],1,"sensitive = حسّاس."),
+VV("Unit 1 · L2","Antonym of “underestimated”:",["undervalued","underrated","overestimated","appreciated"],2,"underestimated ≠ overestimated."),
+VV("Unit 1 · L2","Synonym of “mindfulness”:",["awareness","distraction","mindlessness","inattention"],0,"mindfulness = awareness, attentiveness."),
+VV("Unit 1 · L2","Antonym of “measurable”:",["quantifiable","assessable","immeasurable","calculable"],2,"measurable ≠ immeasurable."),
+VV("Unit 1 · L2","Antonym of “processed” food:",["refined","manufactured","natural","treated"],2,"processed ≠ unprocessed / natural."),
+VV("Unit 1 · L2","Antonym of “moderate”:",["mild","reasonable","average","extreme"],3,"moderate ≠ extreme / excessive."),
+VV("Unit 1 · L2","She was absent ______ illness.",["although","due to","because","since"],1,"due to + noun."),
+VV("Unit 1 · L2","______ being very tired, he finished the race.",["Although","Despite","Because","Since"],1,"despite + V-ing / noun."),
+VV("Unit 1 · L2","______ the exam was difficult, most students passed.",["Despite","Due to","Although","In spite"],2,"although + جملة كاملة."),
+VV("Unit 1 · L2","She felt great ______ she exercised regularly. (cause)",["because","due to","despite","owing to"],0,"because + جملة."),
+VV("Unit 1 · L3","“Agency” means ______.",["the ability to choose and act independently","a travel company","lack of choice","a government office"],0,"agency = القدرة على الاختيار."),
+VV("Unit 1 · L3","Antonym of “disempowering”:",["limiting","weakening","empowering","restricting"],2,"disempowering ≠ empowering."),
+VV("Unit 1 · L3","Synonym of “accessible”:",["restricted","available","hidden","unavailable"],1,"accessible = available, reachable."),
+VV("Unit 1 · L3","Synonym of “advocate” (noun):",["supporter","opponent","critic","observer"],0,"advocate = supporter."),
+VV("Unit 1 · L3","Antonym of “affordable”:",["inexpensive","cheap","expensive","reasonable"],2,"affordable ≠ expensive."),
+VV("Unit 1 · L4","Antonym of “decisive”:",["determined","firm","hesitant","strong"],2,"decisive ≠ hesitant."),
+VV("Unit 1 · L4","Antonym of “variable”:",["changeable","constant","fluctuating","flexible"],1,"variable ≠ constant."),
+VV("Unit 1 · L4","Synonym of “interact”:",["ignore","engage","avoid","isolate"],1,"interact = engage."),
+VV("Unit 1 · L4","Teenagers need to ______ coping strategies for stress.",["adapt","adopt","contract","include"],1,"adopt = يتبنّى."),
+VV("Unit 2 · L1","Synonym of “interfere with”:",["disrupt","help","assist","support"],0,"interfere = disrupt."),
+VV("Unit 2 · L1","Antonym of “withdraw”:",["retreat","advance","pull back","leave"],1,"withdraw ≠ advance."),
+VV("Unit 2 · L1","Synonym of “fulfilling”:",["rewarding","harmful","unsatisfying","risky"],0,"fulfilling = rewarding."),
+VV("Unit 2 · L1","Antonym of “anxiety”:",["worry","nervousness","calmness","fear"],2,"anxiety ≠ calmness."),
+VV("Unit 2 · L1","Children like to play ______ in good weather.",["outdoor","outdoors","out of door","outdoorly"],1,"outdoors (ظرف)."),
+VV("Unit 2 · L2","Antonym of “contemporary”:",["modern","current","ancient","recent"],2,"contemporary ≠ ancient."),
+VV("Unit 2 · L2","Synonym of “fade”:",["weaken","brighten","intensify","grow"],0,"fade = weaken, diminish."),
+VV("Unit 2 · L2","Antonym of “collaborative”:",["cooperative","joint","individual","shared"],2,"collaborative ≠ individual."),
+VV("Unit 2 · L2","Antonym of “failure”:",["defeat","success","disappointment","mistake"],1,"failure ≠ success."),
+VV("Unit 2 · L3","Synonym of “persevere”:",["persist","quit","stop","avoid"],0,"persevere = persist."),
+VV("Unit 2 · L3","Antonym of “significant”:",["important","notable","minor","major"],2,"significant ≠ minor."),
+VV("Unit 2 · L3","Synonym of “motivation”:",["incentive","apathy","discouragement","laziness"],0,"motivation = incentive, drive."),
+VV("Unit 2 · L3","Antonym of “intense”:",["extreme","severe","strong","mild"],3,"intense ≠ mild."),
+VV("Unit 2 · L4","The long uphill ride was ______.",["exhausted","exhausting","exhaust","exhaustion"],1,"exhausting = مُرهِق."),
+VV("Unit 2 · L4","After the ride, everyone felt ______.",["exhausting","exhausted","exhaust","exhaustive"],1,"exhausted = منهك."),
+VV("Unit 2 · L4","Synonym of “overcome”:",["conquer","give in","surrender","avoid"],0,"overcome = defeat, conquer."),
+VV("Unit 2 · L4","Antonym of “comfort”:",["ease","relief","discomfort","rest"],2,"comfort ≠ discomfort.")
+];
+const addG=[
+GG("Unit 1 · Relative Clauses","The person to ______ I spoke was kind.",["who","whom","whose","which"],1,"حرف جر + whom."),
+GG("Unit 1 · Relative Clauses","This is the house in ______ I was born.",["that","who","which","whose"],2,"حرف جر + which."),
+GG("Unit 1 · Relative Clauses","I have several classmates, some of ______ live near me.",["whom","who","whose","which"],0,"some of whom."),
+GG("Unit 1 · Relative Clauses","She is the most intelligent girl ______ I have ever met.",["who","that","whom","what"],1,"بعد الصفة العليا نفضّل that."),
+GG("Unit 1 · Relative Clauses","My brother, ______ lives in Cairo, is a doctor.",["that","who","which","whose"],1,"non-defining → who (مش that)."),
+GG("Unit 1 · Relative Clauses","The man ______ car was stolen called the police.",["who","which","whose","whom"],2,"whose = ملكية."),
+GG("Unit 1 · Participles","______ every day, the machine needs maintenance.",["Using","Being used","Used being","To use"],1,"Being + V3 (مبني للمجهول)."),
+GG("Unit 1 · Participles","______ tired, Hana went to bed early.",["Felt","Feeling","To feel","Having felt to"],1,"V-ing لنفس الفاعل."),
+GG("Unit 1 · Participles","______ of the change, she arrived late.",["Not informed","Not having been informed","Not informing","Having not inform"],1,"Not having been + V3."),
+GG("Unit 1 · Conditionals","If you heat ice, it ______.",["will melt","melts","would melt","melted"],1,"Zero conditional (حقيقة)."),
+GG("Unit 1 · Conditionals","If she had studied medicine, she ______ a doctor now.",["would be","would have been","will be","was"],0,"Mixed conditional."),
+GG("Unit 1 · Conditionals","______ it not been for your help, I would have failed.",["Had","Were","Should","Did"],0,"Had it not been for..."),
+GG("Unit 1 · Conditionals","I'll leave my phone on ______ you call.",["unless","in case","if not","but"],1,"in case = تحسّبًا."),
+GG("Unit 1 · Conditionals","You can borrow the book ______ you return it tomorrow.",["as long as","unless","in case","although"],0,"as long as = بشرط."),
+GG("Unit 1 · Conditionals","If it ______ for the rain, we would have gone out.",["wasn't","hadn't been","weren't","isn't"],1,"If it hadn't been for."),
+GG("Unit 2 · Verb Patterns","She refused ______ the money.",["taking","to take","take","took"],1,"refuse + to-inf."),
+GG("Unit 2 · Verb Patterns","He admitted ______ the window.",["to break","breaking","break","to breaking"],1,"admit + V-ing."),
+GG("Unit 2 · Verb Patterns","My mother doesn't allow me ______ late.",["stay","to stay","staying","stayed"],1,"allow + obj + to-inf."),
+GG("Unit 2 · Verb Patterns","I'm not used to ______ up early.",["get","getting","got","to get"],1,"be used to + V-ing."),
+GG("Unit 2 · Verb Patterns","He stopped ______ a sandwich on his way home. (he paused in order to buy)",["to buy","buying","buy","bought"],0,"stop to + V = توقف ليفعل."),
+GG("Unit 2 · Verb Patterns","I remember ______ the door; I'm sure I locked it.",["locking","to lock","lock","locked"],0,"remember + V-ing = تذكّر شيئًا حدث."),
+GG("Unit 2 · Verb Patterns","The doctor recommended ______ more water.",["to drink","drinking","drink","drank"],1,"recommend + V-ing."),
+GG("Unit 2 · Verb Patterns","Thanks ______ exercising regularly, he is fit.",["to","for","of","with"],0,"thanks to + V-ing."),
+GG("Unit 2 · Verb Patterns","I'd rather you ______ early.",["come","came","to come","coming"],1,"would rather + فاعل + past."),
+GG("Unit 2 · Verb Patterns","She is interested ______ painting.",["in","on","at","of"],0,"interested in.")
+];
+const ins=(sec,arr)=>{const k=Q.map(x=>x.s).lastIndexOf(sec);Q.splice(k+1,0,...arr)};Q.forEach(x=>x.c=1);addR.forEach((x,i)=>{if(i%2==0)x.c=1});ins(R,addR);ins(V,addV);ins(G,addG);
+Q.forEach(x=>{if(!x.o)return;const t=x.o[x.a],o=x.o.slice();for(let i=o.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1));[o[i],o[j]]=[o[j],o[i]]}x.o=o;x.a=o.indexOf(t)});
+const cn=(l,r)=>[l,r];
+const JRE=[cn("Justify","\\b(i think|i believe|yes|no,|in my opinion|to a (large|great|some|limited) extent)"),cn("Reason","\\b(because|this is because|the reason|as a result)\\b"),cn("Evidence","\\b(for example|for instance|according to|the text (says|shows)|such as)\\b")];
+const ES=(q,tag,min,h,r,k,m)=>({s:E,essay:1,tag,q,min,h,r,k,m});
+Q.push(
+ES("Do you think creative activities are important for teenagers? Answer using J–R–E.","JRE",35,"Justify (رأي) + Reason (سبب) + Evidence (دليل/مثال). 3 جمل مترابطة.",["J — رأي واضح","R — سبب منطقي مرتبط بالرأي","E — دليل أو مثال محدد","لغة سليمة"],JRE,"Yes, I think creative activities are important for teenagers. This is because they help teenagers express their feelings and reduce stress. For example, the text says that drawing or listening to music can make a student feel more relaxed."),
+ES("Why can heavy social media use make teenagers feel unhappy? (Analyze)","Analyze",45,"Idea + Why + Evidence: اشرح السبب (الإزاي) مش مجرد الإجابة.",["فكرة أساسية واضحة","شرح السبب (Why)","دليل من الدرس","لغة سليمة"],JRE,"Heavy social media use can make teenagers unhappy because it encourages constant comparison. Users post only carefully selected images, so viewers believe that other people's lives are perfect. According to the text, teenagers who spend more than three hours a day on image-based platforms are twice as likely to report low self-esteem. This shows that unrealistic images make them feel they are never good enough."),
+ES("How convincing is the statistic that teenagers who spend over three hours a day on image-based platforms are “twice as likely” to report low self-esteem? What else would you need to know? (Evaluate)","Evaluate",50,"قيّم الدليل (قوي/ضعيف) + اذكر معلومة ناقصة (عيّنة، عمر، متغيّرات أخرى).",["حكم واضح (convincing / not fully)","سبب للحكم (مصدر، مقارنة…)","معلومة إضافية مطلوبة","لغة سليمة"],[cn("Judgment","\\b(convincing|fairly|partly|not fully|reliable|limited)\\b"),cn("Reason","\\b(because|since|as)\\b"),cn("Extra info","\\b(sample|size|age|other factors|controlled|i would need|i would like to know)\\b")],"The statistic is fairly convincing because it comes from a respected organisation and gives a clear comparison. However, it does not prove that social media causes low self-esteem. I would need to know the sample size, the age groups, and whether other factors, such as family problems, were controlled."),
+ES("Explain the highlight-reel effect in your own words and say why it can be harmful. (Explain)","Explain",45,"المعنى بكلماتك (مش نقل حرفي) + مثال + الضرر.",["المعنى صحيح وبكلماتك","مثال واضح","توضيح الضرر","لغة سليمة"],[cn("Meaning","\\b(means|is when|refers to|the tendency)\\b"),cn("Example","\\b(for example|for instance|such as)\\b"),cn("Harm","\\b(harmful|harm|damage|self-esteem|compare|comparison|unhappy)\\b")],"The highlight-reel effect means that people post only the best moments of their lives, so others believe their lives are perfect. For example, a student may see a friend's holiday photos and forget the difficult days. It is harmful because it leads to unfair comparison and lowers self-esteem."),
+ES("Compare how collectivist and individualistic teenagers cope with stress. Which approach do you think is more effective? Why?","Compare",55,"استخدم أدوات مقارنة (whereas / while / unlike) + رأيك بتبرير.",["وصف الـ collectivist","وصف الـ individualistic","أداة مقارنة صحيحة","رأي + تبرير"],[cn("Collectivist","collectivist"),cn("Individualistic","individualistic"),cn("Compare word","\\b(whereas|while|unlike|in contrast|however|on the other hand)\\b"),cn("Opinion","\\b(i think|i believe|in my opinion|neither|both)\\b")],"Collectivist teenagers usually seek emotional support from parents or siblings, whereas individualistic teenagers rely on personal strategies such as music, exercise or time in nature. In my opinion, neither approach is always better. The study found that the availability and quality of support matter more, so teenagers should use the method that gives them real help."),
+ES("Analytical paragraph (80–100 words): Sleep is one of the most important factors for teenagers' well-being.","Analytical Paragraph",80,"Claim → Reason → Evidence → Explanation → Conclusion.",["Topic sentence / Claim","Reason","Evidence","Explanation","Concluding sentence"],[cn("Claim","\\b(sleep)\\b"),cn("Reason","\\b(because|this is because)\\b"),cn("Evidence","\\b(according to|for example|the text|studies)\\b"),cn("Explanation","\\b(this shows|this means|this suggests)\\b"),cn("Conclusion","\\b(therefore|thus|in conclusion|to sum up)\\b")],"Sleep is one of the most important factors for teenagers' well-being. This is because the body and brain recover while we sleep. According to the text, teenagers who sleep fewer than seven hours are more likely to report anxiety. This shows that poor sleep harms mental health as well as physical energy. Therefore, adequate sleep plays a major role in maintaining overall well-being."),
+ES("Diary entry (80–100 words): Write about a day that was supposed to be relaxing but was not.","Diary Entry",80,"Date + Dear Diary + أحداث مرتبة + مشاعر + درس في الآخر.",["التاريخ + Dear Diary","أحداث مرتبة بأدوات ربط","مشاعر واضحة","خاتمة/درس","زمن الماضي صحيح"],[cn("Opening","dear diary"),cn("Sequence","\\b(at first|then|after that|suddenly|finally|in the end)\\b"),cn("Feelings","\\b(felt|feel|feeling|proud|tired|exhausted|nervous|happy)\\b"),cn("Lesson","\\b(i learned|i realised|i realized|tomorrow|i hope)\\b")],"Saturday, 12 October\nDear Diary,\nToday was supposed to be relaxing, but it turned out to be an adventure! At first, I felt confident as my friend and I cycled along the Nile. However, after an hour my legs began to ache and I felt like giving up. Suddenly, I remembered that I did not want to disappoint my friend, so I kept going step by step. Finally, we reached the end and I was exhausted but incredibly proud. I learned that I am stronger than I thought.\nYours, Omar"),
+ES("Opinion paragraph (80–100 words): Should schools offer more sports and creative activities?","Opinion Paragraph",80,"Opinion + 2 reasons + مثال + رأي مخالف (Although…) + خاتمة.",["رأي واضح في الأول","سببين على الأقل","مثال","جملة Although/However","خاتمة"],[cn("Opinion","\\b(in my opinion|i believe|i think)\\b"),cn("Sequence","\\b(first of all|second|moreover|in addition|furthermore)\\b"),cn("Example","\\b(for example|for instance)\\b"),cn("Contrast","\\b(although|however|even though|on the other hand)\\b"),cn("Conclusion","\\b(in conclusion|to sum up|therefore)\\b")],"In my opinion, schools should offer more sports and creative activities. First of all, these activities reduce stress and improve concentration, which helps students perform better in class. Second, they teach life skills such as teamwork and perseverance. For example, a drama club teaches students to collaborate and accept mistakes. Although some people believe that academic subjects are more important, I think balanced students achieve better results. In conclusion, schools should give every student equal access to sports and the arts."),
+ES("Read the post: “Every successful person wakes up at 5 am. NO excuses! If you sleep later, you are lazy.” Is it biased or balanced? Justify your answer with TWO language features.","Bias Detection",40,"حدّد النوع + اذكر خاصيتين لغويتين (كلمات مطلقة، صفات تقييمية، غياب دليل، رأي واحد).",["حكم صحيح (biased)","خاصية لغوية 1 مع مثال من البوست","خاصية لغوية 2","تبرير مقنع"],[cn("Judgment","\\bbiased\\b"),cn("Absolute words","\\b(every|no excuses|absolute|always|never)\\b"),cn("Evaluative","\\b(lazy|evaluative|judgmental)\\b"),cn("No evidence","\\b(no evidence|one side|one-sided|opinion)\\b")],"The post is biased. First, it uses absolute words such as “every” and “NO excuses”, which present one view as the only truth. Second, it uses the evaluative adjective “lazy” to judge people who sleep later. In addition, it gives no evidence and shows only one way of living, so it is not balanced.")
+);
+Q.forEach(x=>{if(x.essay)x.c=1});const FULL=Q.slice();let OBJ=0,ESN=0,TOTAL=90*60,SC="core";const PH="01500492203";
+let MODE="exam",ans=Q.map(()=>null),fl=new Set(),cur=0,left=TOTAL,tm=null,name="",done=false,sentOK=false,mk=Q.map(x=>x.essay?x.r.map(()=>false):null),DB=null,UID=null,gest=false;
+const $=id=>document.getElementById(id);
+const esc=s=>s.replace(/[<>&]/g,c=>({"<":"&lt;",">":"&gt;","&":"&amp;"}[c]));
+const norm=s=>(s||"").toLowerCase().replace(/[’‘]/g,"'").replace(/[.!?]+$/,"").replace(/\s+/g," ").replace(/\s*,\s*/g,", ").trim();
+const wcnt=t=>(t||"").trim().split(/\s+/).filter(Boolean).length;
+const correct=i=>{const x=Q[i];if(x.essay)return false;if(x.o)return ans[i]===x.a;return ans[i]!=null&&x.t.map(norm).includes(norm(ans[i]))};
+const answered=i=>ans[i]!=null&&(!Q[i].essay||wcnt(ans[i])>0);
+let essTotal=0;
+(async()=>{try{if(window.claude&&claude.use){DB=await claude.use("db");const u=await claude.use("user");if(u)UID=await u.id()}}catch(e){DB=null}})();
+function applyScope(){const sel=FULL.slice();Q.length=0;Q.push(...sel);OBJ=Q.filter(x=>!x.essay).length;ESN=Q.length-OBJ;TOTAL=150*60;left=TOTAL;essTotal=Q.reduce((a,x)=>a+(x.essay?x.r.length:0),0);ans=Q.map(()=>null);mk=Q.map(x=>x.essay?x.r.map(()=>false):null);fl=new Set();cur=0;$("nq").textContent=Q.length;$("ne").textContent=ESN;$("dur").textContent=TOTAL/60;$("timer").textContent=(TOTAL/60)+":00"}
+applyScope();
+$("tg").onclick=()=>{const r=document.documentElement,d=getComputedStyle(r).getPropertyValue("--bg").trim()==="#070d1f";r.dataset.theme=d?"light":"dark"};
+window.onbeforeunload=e=>{if(tm&&!done){e.preventDefault();return ""}};
+$("go").onclick=()=>{name=$("nm").value.trim();if(!name){$("nm").focus();$("nm").style.borderColor="var(--bad)";return}
+ $("who").textContent=name;$("start").classList.add("hidden");$("exam").classList.remove("hidden");$("top").classList.remove("hidden");tm=setInterval(tick,1000);renderAll();window.scrollTo(0,0)};
+function tick(){left--;if(left<=0){left=0;$("timer").textContent="00:00";autoSub=true;finish(true);return}const m=Math.floor(left/60),s=left%60;$("timer").textContent=String(m).padStart(2,"0")+":"+String(s).padStart(2,"0");if(left<=600)$("timer").classList.add("low")}
+const SECT={"Reading":["📖 Reading","اقرأ كل نص وجاوب على أسئلته"],"Vocabulary":["🔤 Vocabulary","مفردات الكتاب: معاني ومرادفات ومضادات وعائلات كلمات"],"Grammar":["⚙ Grammar","قواعد الكتاب: Relative Clauses · Participles · Conditionals · Verb Patterns"],"Short Writing":["🧩 Short Writing","اكتب الإجابة القصيرة بالإنجليزي"],"Essay (مقالي)":["✍ Essay (مقالي)","اكتب إجابات كاملة بأساليب الكتاب"]};
+const miss=()=>Q.map((x,i)=>x.essay?(wcnt(ans[i])>=15?-1:i):(ans[i]==null?i:-1)).filter(i=>i>=0);
+function renderAll(){const root=$("all");root.innerHTML="";let lastS="",lastP="";
+ Q.forEach((x,i)=>{
+  if(x.s!==lastS){const h=document.createElement("div");h.className="sechead";h.innerHTML=SECT[x.s][0]+"<small>"+SECT[x.s][1]+"</small>";root.append(h);lastS=x.s;lastP=""}
+  if(x.p&&x.p!==lastP){const d=document.createElement("div");d.className="passage";d.innerHTML="<b>Read the text:</b><br>"+x.p;root.append(d);lastP=x.p}else if(!x.p)lastP="";
+  const c=document.createElement("div");c.className="card qcard";c.id="q"+i;
+  const hd=document.createElement("div");hd.className="qh";hd.innerHTML='<span class="qn">'+(i+1)+'</span><span class="sec">'+(x.l||x.s)+(x.tag?" · "+x.tag:"")+"</span>";c.append(hd);
+  const q=document.createElement("div");q.className="q";q.textContent=x.q;c.append(q);
+  if(x.o){x.o.forEach((o,j)=>{const e=document.createElement("button");e.className="opt";e.innerHTML="<i>"+"ABCD"[j]+"</i>";e.append(o);e.onclick=()=>{ans[i]=j;[...c.querySelectorAll(".opt")].forEach((z,k)=>z.classList.toggle("sel",k===j));upd()};c.append(e)})}
+  else if(x.essay){const g=document.createElement("div");g.className="guide";g.textContent="💡 "+x.h;c.append(g);const t=document.createElement("textarea");t.className="en";t.dir="ltr";t.placeholder="Write your answer here…";t.spellcheck=false;c.append(t);
+   const w=document.createElement("div");w.className="wc";const wc=document.createElement("span"),mn=document.createElement("span");mn.textContent="الحد الأدنى المقترح: "+x.min+" كلمة (ولا يقل عن 15)";w.append(wc,mn);c.append(w);const ch=document.createElement("div");ch.className="chips";c.append(ch);
+   const u2=()=>{const n=wcnt(t.value);wc.textContent="عدد الكلمات: "+n;wc.style.color=n>=x.min?"var(--ok)":"var(--mut)";ch.innerHTML="";x.k.forEach(([l,r])=>{const k=document.createElement("span");const on=new RegExp(r,"i").test(t.value);k.className="chip"+(on?" on":"");k.textContent=(on?"✓ ":"")+l;ch.append(k)});ans[i]=t.value.trim()===""?null:t.value;upd()};t.oninput=u2;u2()}
+  else{const n=document.createElement("input");n.type="text";n.className="en";n.dir="ltr";n.placeholder="Type your answer here…";n.autocomplete="off";n.spellcheck=false;n.oninput=()=>{ans[i]=n.value.trim()===""?null:n.value;upd()};c.append(n)}
+  root.append(c)});upd()}
+function upd(){const ms=miss(),n=ms.length;$("pb").style.width=((Q.length-n)/Q.length*100)+"%";$("cnt2").textContent="أجبت "+(Q.length-n)+" من "+Q.length;
+ Q.forEach((_,i)=>{const c=$("q"+i);if(c)c.classList.toggle("done",!ms.includes(i))});
+ $("sub").textContent=n?"🔒 أكمل كل الأسئلة للتسليم (متبقي "+n+")":"تسليم الامتحان ✔";$("sub").classList.toggle("lk",n>0);$("rem").textContent=n?"لازم تحل كل الأسئلة قبل التسليم — أو الامتحان هيتسلّم تلقائيًا لما الوقت يخلص.":"كل الأسئلة اتحلّت ✔ تقدر تسلّم الآن."}
+const goQ=i=>{const c=$("q"+i);if(c)c.scrollIntoView({behavior:"smooth",block:"center"})};
+$("sub").onclick=()=>{const ms=miss();$("dyes").classList.toggle("hidden",ms.length>0);
+ if(ms.length){$("dmsg").textContent="🔒 مينفعش تسلّم قبل ما تحل كل الأسئلة. متبقي "+ms.length+" سؤال: "+ms.slice(0,15).map(i=>Q[i].essay?"✍"+(i-OBJ+1):i+1).join("، ")+(ms.length>15?" …":"")+" (المقالي لازم 15 كلمة على الأقل).";$("dno").textContent="اذهب لأول سؤال ناقص";$("dno").onclick=()=>{$("dlg").close();goQ(ms[0])}}
+ else{$("dmsg").textContent=(fl.size?"فيه "+fl.size+" سؤال معلّم للمراجعة. ":"")+"كل الأسئلة اتحلّت ✔ — متأكد إنك عايز تسلّم؟";$("dno").textContent="رجوع";$("dno").onclick=()=>$("dlg").close()}
+ $("dlg").showModal()};
+$("dyes").onclick=()=>{$("dlg").close();gest=true;finish()};
+function score(){let o=0,e=0;const secs={};Q.forEach((x,i)=>{secs[x.s]=secs[x.s]||[0,0];if(x.essay){const k=mk[i].filter(Boolean).length;e+=k;secs[x.s][0]+=k;secs[x.s][1]+=x.r.length}else{secs[x.s][1]++;if(correct(i)){o++;secs[x.s][0]++}}});return{o,e,secs}}
+const rated=()=>mk.some(m=>m&&m.some(Boolean));
+function buildMsg(){const{o,e,secs}=score(),tot=OBJ+essTotal,sc=o+e,p=Math.round(sc/tot*100),used=TOTAL-left,wr=Q.filter((x,i)=>x.essay&&ans[i]).length;
+ return["📋 نتيجة امتحان — الامتحان الملكي (English Baccalaureate 2)","👤 الطالب: "+name,"🎯 الدرجة الكلية: "+sc+" / "+tot+" ("+p+"%)","✅ الموضوعي (تلقائي): "+o+" / "+OBJ,rated()?"✍ المقالي (تقييم ذاتي): "+e+" / "+essTotal:"✍ المقالي: لم يُقيَّم بعد — كتب "+wr+" من "+ESN+" إجابة","⏱ الوقت: "+Math.floor(used/60)+" د "+used%60+" ث","📊 الأقسام: "+Object.keys(secs).map(k=>k+" "+secs[k][0]+"/"+secs[k][1]).join(" | "),(autoSub?"⏰ انتهى الوقت وتم التسليم تلقائيًا ("+miss().length+" سؤال بدون إجابة)":"✔ سلّم داخل الوقت المحدد"),"🕒 "+new Date().toLocaleString("ar-EG"),"جميع الحقوق محفوظة © محمد رمضان الحرباوي"].join("\n")}
+const SB_URL="https://bekfemtkhhluktidhcyi.supabase.co",SB_KEY="sb_publishable_efC0vUlDzVwJXAlg80lg9A_5rEhehxi";
+const uuid=()=>"xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx".replace(/[xy]/g,c=>{const r=Math.random()*16|0;return(c==="x"?r:(r&3|8)).toString(16)});const AID=uuid();
+async function saveDb(stage){stage=typeof stage==="string"?stage:"submitted";try{const{o,e,secs}=score(),tot=OBJ+essTotal,sc=o+e;
+ const r=await fetch(SB_URL+"/rest/v1/exam_results",{method:"POST",headers:{"apikey":SB_KEY,"Content-Type":"application/json","Prefer":"return=minimal"},body:JSON.stringify({attempt_id:AID,student_name:name,stage,total_score:sc,total_max:tot,percent:Math.round(sc/tot*100),objective_score:o,objective_max:OBJ,essay_score:e,essay_max:essTotal,sections:secs,essays:Q.map((x,i)=>x.essay?{q:x.q,answer:ans[i]||"",marks:mk[i]}:null).filter(Boolean),time_used_seconds:TOTAL-left,auto_submitted:autoSub})});return r.ok}catch(err){return false}}
+let tried=false,autoSub=false;
+function chk(){$("gok").disabled=!(sentOK||($("gck").checked&&tried))}
+function unlock(){sentOK=true;$("gst").textContent+=" ✔ تم تسجيل الإرسال.";chk()}
+function refreshLinks(){const m=buildMsg(),u=encodeURIComponent(m),n="20"+PH.slice(1);window.lastMsg=m;
+ [["gwa","wa"],["gwa2","wa2"],["gsms","sms"]].forEach(([g,r],k)=>{const h=k==0?"https://wa.me/"+n+"?text="+u:k==1?"https://api.whatsapp.com/send?phone="+n+"&text="+u:"sms:"+PH+"?body="+u;$(g).href=h;$(r).href=h});$("gmsg").value=m}
+async function copyTxt(t,st){try{await navigator.clipboard.writeText(t);st.textContent="تم النسخ ✔"}catch(e){const ta=document.createElement("textarea");ta.value=t;document.body.append(ta);ta.select();let ok=false;try{ok=document.execCommand("copy")}catch(x){}ta.remove();st.textContent=ok?"تم النسخ ✔":"النسخ مش متاح — حدّد النص في الصندوق وانسخه يدويًا."}tried=true;chk()}
+["gwa","gwa2","gsms","wa","wa2","sms"].forEach(id=>$(id).addEventListener("click",()=>{tried=true;chk();$("gst").textContent="لو واتساب فتح اضغط إرسال هناك ✔ — ولو مفتحش استخدم النسخ.";$("sent").textContent="لو واتساب فتح اضغط إرسال هناك ✔"}));
+$("gcp").onclick=()=>copyTxt(window.lastMsg,$("gst"));$("cp").onclick=()=>{refreshLinks();copyTxt(window.lastMsg,$("sent"))};$("gnum").onclick=()=>copyTxt(PH,$("gst"));
+$("gck").onchange=chk;$("gate").addEventListener("cancel",e=>e.preventDefault());
+$("gok").onclick=()=>{if($("gok").disabled)return;sentOK=true;$("gate").close();$("res").classList.remove("locked");window.scrollTo(0,0)};
+function showScore(){const{o,e,secs}=score(),tot=OBJ+essTotal,sc=o+e,p=Math.round(sc/tot*100),used=TOTAL-left;
+ $("pct").textContent=p+"%";$("ring").style.background="conic-gradient(var(--gold) "+p*3.6+"deg,var(--chip) 0)";
+ const g=p>=90?["🏆","ممتاز جدًا! مستواك رائع، كمّل كده."]:p>=75?["🌟","جيد جدًا! شوية مراجعة وتوصل للنهائية."]:p>=60?["👍","جيد، راجع الأسئلة الغلط وركّز على الجرامر والمفردات."]:["💪","محتاج مراجعة أكتر — ارجع للملزمة وحاول تاني، وانت قدها!"];
+ $("emo").textContent=g[0];$("msg").textContent=g[1];
+ $("stats").innerHTML='<div class="stat"><b>'+sc+" / "+tot+'</b>الدرجة الكلية</div><div class="stat"><b>'+o+" / "+OBJ+'</b>الموضوعي</div><div class="stat"><b>'+e+" / "+essTotal+'</b>المقالي (تقييمك)</div><div class="stat"><b>'+Math.floor(used/60)+"م "+used%60+'ث</b>الوقت</div>';
+ $("bars").innerHTML=Object.keys(secs).map(k=>{const v=Math.round(secs[k][0]/secs[k][1]*100);return '<div class="sb"><div><b>'+k+'</b><span>'+secs[k][0]+"/"+secs[k][1]+" · "+v+'%</span></div><i><u data-w="'+v+'"></u></i></div>'}).join("");
+ setTimeout(()=>document.querySelectorAll("#bars u").forEach(u=>u.style.width=u.dataset.w+"%"),80);
+ const pc=k=>secs[k][1]?secs[k][0]/secs[k][1]:0,bd=[];if(pc(R)>=.8)bd.push("📖 قارئ بارع");if(pc(V)>=.85)bd.push("🔤 سيد المفردات");if(pc(G)>=.85)bd.push("⚙ ملك الجرامر");if(pc(W)>=.75)bd.push("🧩 صائد الأخطاء");if(pc(E)>=.7)bd.push("✍ كاتب متميز");if(p>=90)bd.push("🏆 متفوق");if(p>=75&&used<3600)bd.push("⚡ سريع ودقيق");
+ $("bds").innerHTML=bd.length?bd.map(x=>'<span class="bd">'+x+'</span>').join(""):'<span class="hint">حاول تاني عشان تكسب أوسمة 🎖</span>';refreshLinks();return p}
+let svT;function svLater(){clearTimeout(svT);svT=setTimeout(()=>saveDb("rated"),900)}
+async function finish(force){if(done||(miss().length&&!force))return;done=true;if($("dlg").open)$("dlg").close();clearInterval(tm);
+ $("exam").classList.add("hidden");$("top").classList.add("hidden");$("res").classList.remove("hidden");$("rname").textContent=name;
+ $("rev").innerHTML=Q.map((x,i)=>{if(x.essay)return "";const ok=correct(i);const mine=ans[i]==null?"— لم تُجب —":(x.o?esc(x.o[ans[i]]):esc(ans[i]));const right=x.o?x.o[x.a]:x.t[0];
+  return '<div class="rv '+(ok?"ok":"no")+'"><div class="en"><b>'+(i+1)+". "+x.q+'</b></div><div class="en">'+(ok?"✅":"❌")+" Your answer: "+mine+'</div>'+(ok?"":'<div class="en">✔ Correct: <b>'+esc(right)+'</b></div>')+'<div class="ex">'+x.e+'</div></div>'}).join("");
+ const ev=$("ess");ev.innerHTML="";
+ Q.forEach((x,i)=>{if(!x.essay)return;const d=document.createElement("div");d.className="rv no";
+  d.innerHTML='<div><span class="tag">'+x.tag+'</span></div><div class="en" style="margin:6px 0"><b>'+(i-OBJ+1)+". "+x.q+'</b></div><b>إجابتك ('+wcnt(ans[i])+' كلمة):</b><div class="mine">'+(ans[i]?esc(ans[i]):"— لم تُجب —")+'</div><b>الإجابة النموذجية:</b><div class="model">'+esc(x.m)+'</div><b>قيّم نفسك (كل بند = درجة):</b>';
+  x.r.forEach((r,j)=>{const l=document.createElement("label");l.className="ck";const c=document.createElement("input");c.type="checkbox";c.onchange=()=>{mk[i][j]=c.checked;d.className="rv "+(mk[i].every(Boolean)?"ok":"no");const p=showScore();if(p>=75)confetti();svLater()};l.append(c,document.createTextNode(r));d.append(l)});ev.append(d)});
+ const p=showScore();if(p>=75)confetti();window.scrollTo(0,0);
+ refreshLinks();$("gst").textContent=autoSub?"⏰ انتهى الوقت — تم تسليم الامتحان تلقائيًا. ":"";$("gate").showModal();
+ const ok=await saveDb();
+ if(ok){$("gst").textContent+="✅ تم إرسال نتيجتك تلقائيًا لمدرّسك. ";sentOK=true;chk()}
+ else{$("gst").textContent+="⚠ تعذّر الإرسال التلقائي (تأكد من الإنترنت) — ابعت النتيجة بالواتساب أو انسخ الرسالة وابعتها."}}
+let cft=0;function confetti(){if(Date.now()-cft<4000)return;cft=Date.now();const c=$("cv"),x=c.getContext("2d");c.width=innerWidth;c.height=innerHeight;const cols=["#c9a227","#f1d77a","#1b8f55","#6f9bff","#fff"];
+ const ps=Array.from({length:150},()=>({x:Math.random()*c.width,y:-20-Math.random()*c.height*.5,r:4+Math.random()*6,vx:Math.random()*4-2,vy:2+Math.random()*4,c:cols[Math.random()*5|0],a:Math.random()*6}));let t=0;
+ (function f(){x.clearRect(0,0,c.width,c.height);ps.forEach(q=>{q.x+=q.vx;q.y+=q.vy;q.a+=.1;x.fillStyle=q.c;x.save();x.translate(q.x,q.y);x.rotate(q.a);x.fillRect(-q.r,-q.r/2,q.r*2,q.r);x.restore()});if(++t<200)requestAnimationFrame(f);else x.clearRect(0,0,c.width,c.height)})()}
+</script>
+</body>
+</html>
