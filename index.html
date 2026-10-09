@@ -83,6 +83,7 @@ a.abtn{display:block;text-align:center;text-decoration:none;padding:13px 22px;bo
 .sechead{margin:26px 0 0;padding:12px 18px;border-radius:16px;background:linear-gradient(135deg,var(--navy),#1b3a80);color:var(--gold2);font-weight:800;font-size:19px;border:1.5px solid var(--gold)}
 .sechead small{display:block;color:#c9d6ff;font-weight:600;font-size:14px}
 .qh{display:flex;gap:10px;align-items:center;margin-bottom:2px}.qn{background:var(--gold);color:#2a1d00;border-radius:50%;min-width:34px;height:34px;display:grid;place-items:center;font-weight:800}
+#subbox{text-align:center}#subbox.ok{border-color:var(--ok);background:rgba(27,143,85,.1)}#subbox.err{border-color:var(--bad);background:rgba(201,68,59,.08)}
 @media print{#top,.row,.nav,.tg,.send{display:none!important}}
 </style>
 </head>
@@ -95,17 +96,17 @@ a.abtn{display:block;text-align:center;text-decoration:none;padding:13px 22px;bo
   <div class="grid"><div class="stat"><b id="nq">—</b>سؤال</div><div class="stat"><b id="dur">90</b>دقيقة</div><div class="stat"><b id="ne">—</b>مقالي</div><div class="stat"><b>5</b>أقسام</div></div>
   <p><b>تعليمات:</b> الامتحان بيشمل Reading وVocabulary وGrammar وإجابات قصيرة وقسم مقالي بأساليب مختلفة (JRE · Analyze · Evaluate · Explain · Compare · Analytical Paragraph · Diary · Opinion · Bias). كل الأسئلة قدامك في صفحة واحدة، اتحرك بالسكرول وجاوب. <b>لما الوقت يخلص الامتحان بيتسلّم تلقائيًا</b> بالإجابات اللي وصلت لها.</p>
   <div class="guide" style="background:rgba(27,143,85,.12);border-color:var(--ok)"><b>📚 مبني على منهج الكتاب:</b> مفردات كل درس (Word · Synonym · Antonym · Word Family · Collocations · Notice the Difference)، ونصوص ودروس الوحدة 1 والوحدة 2، وجرامر الكتاب: Relative Clauses · Participial Phrases · Conditionals · Verb Patterns، وأساليب أسئلة الكتاب (JRE · Analyze · Evaluate · Explain).</div>
-  <div class="guide"><b>⚠ مهم:</b> في آخر الامتحان <b>إرسال النتيجة لمدرّسك إجباري</b> — النتيجة والمراجعة مش هتظهر غير بعد الإرسال. هيتم إرسال اسمك ودرجتك وإحصائياتك.</div>
+  <div class="guide"><b>ℹ مهم:</b> أول ما تضغط <b>تسليم نهائي</b> إجاباتك واسمك ودرجتك بيتبعتوا <b>تلقائيًا</b> لمدرّسك، ومش محتاج تعمل أي حاجة تانية.</div>
   <label for="nm"><b>اكتب اسمك بالكامل:</b></label><input id="nm" type="text" placeholder="اسم الطالب" autocomplete="name">
   <button class="btn big" id="go">ابدأ الامتحان ✦</button>
  </div>
 </section>
 <section id="exam" class="hidden"><div id="all"></div>
  <div class="card gold"><div class="hint" id="rem" style="margin-bottom:8px"></div><button class="btn3 big" id="sub">تسليم الامتحان ✔</button></div></section>
-<section id="res" class="hidden locked">
+<section id="res" class="hidden">
+ <div class="card gold" id="subbox"><h2 id="subst" style="margin:0"></h2></div>
  <div class="cert"><div style="font-size:42px" id="emo"></div><small class="ff">CERTIFICATE OF PERFORMANCE</small><h1 class="gt" id="rname"></h1><div class="hint">تحت رعاية: <b>محمد رمضان الحرباوي</b></div>
   <div class="seal" id="ring"><span id="pct"></span></div><h2 id="msg"></h2><div class="grid" id="stats"></div><div id="bars"></div><div id="bds"></div></div>
- <div class="card send"><h2>📲 إرسال النتيجة النهائية</h2><p>بعد ما تقيّم المقالي بالـ checklist تحت، ابعت النتيجة النهائية لمدرّسك على <b class="en" dir="ltr">01500492203</b>.</p><div class="row"><a class="btn wa abtn" id="wa" target="_blank" rel="noopener noreferrer"><svg class="wi" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg> واتساب</a><a class="btn2 abtn" id="wa2" target="_blank" rel="noopener noreferrer">رابط بديل</a><a class="btn2 abtn" id="sms">SMS ✉</a><button class="btn2" id="cp">نسخ الرسالة 📋</button></div><div class="hint" id="sent"></div></div>
  <div class="card"><h2>✍ المقالي — إجابات نموذجية وتقييم ذاتي</h2><p class="hint">قارن إجابتك بالنموذج وعلّم على البنود اللي حققتها — الدرجة بتتحدّث لحظيًا.</p><div id="ess"></div></div>
  <div class="card"><h2>مراجعة الأسئلة الموضوعية</h2><div id="rev"></div></div>
  <div class="row"><button class="btn big" onclick="location.reload()">إعادة الامتحان 🔄</button></div>
@@ -115,15 +116,6 @@ a.abtn{display:block;text-align:center;text-decoration:none;padding:13px 22px;bo
 <a class="wafab" id="fab" href="https://wa.me/201500492203?text=%D8%A7%D9%84%D8%B3%D9%84%D8%A7%D9%85%20%D8%B9%D9%84%D9%8A%D9%83%D9%85%D8%8C%20%D8%B9%D9%86%D8%AF%D9%8A%20%D8%A7%D8%B3%D8%AA%D9%81%D8%B3%D8%A7%D8%B1%20%D8%A8%D8%AE%D8%B5%D9%88%D8%B5%20%D8%A7%D9%84%D8%A7%D9%85%D8%AA%D8%AD%D8%A7%D9%86" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp"><svg class="wi" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg><span>01500492203<small>تواصل واتساب</small></span></a>
 <button class="tg" id="tg" aria-label="theme">🌓</button><canvas id="cv"></canvas>
 <dialog id="dlg"><h3>تسليم الامتحان؟</h3><p id="dmsg"></p><div class="row"><button class="btn2" id="dno">رجوع</button><button class="btn3" id="dyes">تسليم نهائي</button></div></dialog>
-<dialog id="gate"><h2 class="gt">📲 إرسال النتيجة — إجباري</h2>
- <div class="step"><b>1</b><span>اضغط <b>واتساب</b> — هيفتح برسالة جاهزة على الرقم <b class="en" dir="ltr">01500492203</b> واضغط <b>إرسال</b>.</span></div>
- <div class="step"><b>2</b><span>لو مفتحش: جرّب <b>رابط بديل</b>، أو اضغط <b>نسخ الرسالة</b> وابعتها يدويًا على نفس الرقم.</span></div>
- <div class="step"><b>3</b><span>علّم على تأكيد الإرسال تحت عشان تفتح لك النتيجة والإجابات.</span></div>
- <textarea id="gmsg" readonly></textarea><div class="hint" id="gst"></div>
- <div class="row"><a class="btn wa abtn" id="gwa" target="_blank" rel="noopener noreferrer"><svg class="wi" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg> واتساب</a><a class="btn2 abtn" id="gwa2" target="_blank" rel="noopener noreferrer">رابط بديل</a><a class="btn2 abtn" id="gsms">SMS ✉</a></div>
- <div class="row"><button class="btn2" id="gcp">نسخ الرسالة 📋</button><button class="btn2" id="gnum">نسخ الرقم 📞</button></div>
- <label class="ck" style="margin-top:12px"><input type="checkbox" id="gck"><b>أؤكد إني بعتّ نتيجتي لمدرّسي</b></label>
- <button class="btn big" id="gok" disabled>عرض النتيجة والإجابات ←</button></dialog>
 <script>
 const P1="Many teenagers spend several hours a day on social media, where they see photos of friends, celebrities and influencers. Psychologists warn that these images are often carefully chosen and edited, so they give a false picture of real life. Teenagers who constantly compare themselves with these perfect images may feel dissatisfied with their appearance and lower their self-esteem. Experts, however, say that social media is not harmful in itself. Teenagers who think critically about what they see, and who balance screen time with sleep, exercise and face-to-face friendships, are less likely to suffer. Schools and families also have a responsibility to teach media literacy and to provide support.";
 const R="Reading", V="Vocabulary", G="Grammar", W="Short Writing", E="Essay (مقالي)";
@@ -345,17 +337,26 @@ function score(){let o=0,e=0;const secs={};Q.forEach((x,i)=>{secs[x.s]=secs[x.s]
 const rated=()=>mk.some(m=>m&&m.some(Boolean));
 function buildMsg(){const{o,e,secs}=score(),tot=OBJ+essTotal,sc=o+e,p=Math.round(sc/tot*100),used=TOTAL-left,wr=Q.filter((x,i)=>x.essay&&ans[i]).length;
  return["📋 نتيجة امتحان — الامتحان الملكي (English Baccalaureate 2)","👤 الطالب: "+name,"🎯 الدرجة الكلية: "+sc+" / "+tot+" ("+p+"%)","✅ الموضوعي (تلقائي): "+o+" / "+OBJ,rated()?"✍ المقالي (تقييم ذاتي): "+e+" / "+essTotal:"✍ المقالي: لم يُقيَّم بعد — كتب "+wr+" من "+ESN+" إجابة","⏱ الوقت: "+Math.floor(used/60)+" د "+used%60+" ث","📊 الأقسام: "+Object.keys(secs).map(k=>k+" "+secs[k][0]+"/"+secs[k][1]).join(" | "),(autoSub?"⏰ انتهى الوقت وتم التسليم تلقائيًا ("+miss().length+" سؤال بدون إجابة)":"✔ سلّم داخل الوقت المحدد"),"🕒 "+new Date().toLocaleString("ar-EG"),"جميع الحقوق محفوظة © محمد رمضان الحرباوي"].join("\n")}
-async function saveDb(){if(!DB||!UID)return false;try{const{o,e,secs}=score();await DB.doc("results/"+UID).set({name,o,e,secs,total:OBJ+essTotal,used:TOTAL-left,essays:Q.map((x,i)=>x.essay?(ans[i]||""):null).filter(x=>x!==null),ts:Date.now()});return true}catch(err){return false}}
-let tried=false,autoSub=false;
-function chk(){$("gok").disabled=!(sentOK||($("gck").checked&&tried))}
-function unlock(){sentOK=true;$("gst").textContent+=" ✔ تم تسجيل الإرسال.";chk()}
-function refreshLinks(){const m=buildMsg(),u=encodeURIComponent(m),n="20"+PH.slice(1);window.lastMsg=m;
- [["gwa","wa"],["gwa2","wa2"],["gsms","sms"]].forEach(([g,r],k)=>{const h=k==0?"https://wa.me/"+n+"?text="+u:k==1?"https://api.whatsapp.com/send?phone="+n+"&text="+u:"sms:"+PH+"?body="+u;$(g).href=h;$(r).href=h});$("gmsg").value=m}
-async function copyTxt(t,st){try{await navigator.clipboard.writeText(t);st.textContent="تم النسخ ✔"}catch(e){const ta=document.createElement("textarea");ta.value=t;document.body.append(ta);ta.select();let ok=false;try{ok=document.execCommand("copy")}catch(x){}ta.remove();st.textContent=ok?"تم النسخ ✔":"النسخ مش متاح — حدّد النص في الصندوق وانسخه يدويًا."}tried=true;chk()}
-["gwa","gwa2","gsms","wa","wa2","sms"].forEach(id=>$(id).addEventListener("click",()=>{tried=true;chk();$("gst").textContent="لو واتساب فتح اضغط إرسال هناك ✔ — ولو مفتحش استخدم النسخ.";$("sent").textContent="لو واتساب فتح اضغط إرسال هناك ✔"}));
-$("gcp").onclick=()=>copyTxt(window.lastMsg,$("gst"));$("cp").onclick=()=>{refreshLinks();copyTxt(window.lastMsg,$("sent"))};$("gnum").onclick=()=>copyTxt(PH,$("gst"));
-$("gck").onchange=chk;$("gate").addEventListener("cancel",e=>e.preventDefault());
-$("gok").onclick=()=>{if($("gok").disabled)return;sentOK=true;$("gate").close();$("res").classList.remove("locked");window.scrollTo(0,0)};
+const SB_URL="https://bekfemtkhhluktidhcyi.supabase.co",SB_KEY="sb_publishable_efC0vUlDzVwJXAlg80lg9A_5rEhehxi";
+const uuid=()=>"xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx".replace(/[xy]/g,c=>{const r=Math.random()*16|0;return(c==="x"?r:(r&3|8)).toString(16)});const AID=uuid();
+let autoSub=false;const refreshLinks=()=>{};
+const URLX=SB_URL+"/rest/v1/exam_results";
+function payload(stage){const{o,e,secs}=score(),tot=OBJ+essTotal,sc=o+e;
+ return{attempt_id:AID,student_name:name,stage,total_score:sc,total_max:tot,percent:Math.round(sc/tot*100),objective_score:o,objective_max:OBJ,essay_score:e,essay_max:essTotal,sections:secs,
+ essays:Q.map((x,i)=>x.essay?{q:x.q,answer:ans[i]||"",marks:mk[i]}:null).filter(Boolean),
+ answers:Q.map((x,i)=>({n:i+1,section:x.s,lesson:x.l||x.tag||"",q:x.q,answer:x.o?(ans[i]==null?null:x.o[ans[i]]):(ans[i]==null?null:ans[i]),correct:x.essay?null:(x.o?x.o[x.a]:x.t[0]),ok:x.essay?null:correct(i)})),
+ time_used_seconds:TOTAL-left,auto_submitted:autoSub}}
+async function post(b){const h={"apikey":SB_KEY,"Content-Type":"application/json","Prefer":"return=minimal"};
+ try{let r=await fetch(URLX,{method:"POST",headers:h,body:JSON.stringify(b)});if(!r.ok&&r.status===400){const c={...b};delete c.answers;r=await fetch(URLX,{method:"POST",headers:h,body:JSON.stringify(c)})}return r.ok}catch(err){return false}}
+const saveDb=stage=>post(payload(typeof stage==="string"?stage:"submitted"));
+const sbox=(ok,t)=>{$("subbox").className="card gold "+(ok?"ok":"err");$("subst").innerHTML=t};
+async function sendFinal(){const body=payload("submitted");let ok=false;
+ for(let k=0;k<4&&!ok;k++){ok=await post(body);if(!ok)await new Promise(r=>setTimeout(r,1500*(k+1)))}
+ if(ok){try{localStorage.removeItem("pend")}catch(e){}sbox(true,"✅ تم التسليم بنجاح — إجاباتك اتبعتت لمدرّسك تلقائيًا");return}
+ try{localStorage.setItem("pend",JSON.stringify(body))}catch(e){}
+ sbox(false,"⚠ تم التسليم، لكن الإرسال اتأخر بسبب الإنترنت.<br><small>سيب الصفحة مفتوحة — بنعيد المحاولة تلقائيًا</small>");
+ const iv=setInterval(async()=>{if(await post(body)){clearInterval(iv);try{localStorage.removeItem("pend")}catch(e){}sbox(true,"✅ تم التسليم بنجاح — إجاباتك اتبعتت لمدرّسك تلقائيًا")}},8000)}
+try{const pd=localStorage.getItem("pend");if(pd)post(JSON.parse(pd)).then(ok=>{if(ok)localStorage.removeItem("pend")})}catch(e){}
 function showScore(){const{o,e,secs}=score(),tot=OBJ+essTotal,sc=o+e,p=Math.round(sc/tot*100),used=TOTAL-left;
  $("pct").textContent=p+"%";$("ring").style.background="conic-gradient(var(--gold) "+p*3.6+"deg,var(--chip) 0)";
  const g=p>=90?["🏆","ممتاز جدًا! مستواك رائع، كمّل كده."]:p>=75?["🌟","جيد جدًا! شوية مراجعة وتوصل للنهائية."]:p>=60?["👍","جيد، راجع الأسئلة الغلط وركّز على الجرامر والمفردات."]:["💪","محتاج مراجعة أكتر — ارجع للملزمة وحاول تاني، وانت قدها!"];
@@ -365,7 +366,7 @@ function showScore(){const{o,e,secs}=score(),tot=OBJ+essTotal,sc=o+e,p=Math.roun
  setTimeout(()=>document.querySelectorAll("#bars u").forEach(u=>u.style.width=u.dataset.w+"%"),80);
  const pc=k=>secs[k][1]?secs[k][0]/secs[k][1]:0,bd=[];if(pc(R)>=.8)bd.push("📖 قارئ بارع");if(pc(V)>=.85)bd.push("🔤 سيد المفردات");if(pc(G)>=.85)bd.push("⚙ ملك الجرامر");if(pc(W)>=.75)bd.push("🧩 صائد الأخطاء");if(pc(E)>=.7)bd.push("✍ كاتب متميز");if(p>=90)bd.push("🏆 متفوق");if(p>=75&&used<3600)bd.push("⚡ سريع ودقيق");
  $("bds").innerHTML=bd.length?bd.map(x=>'<span class="bd">'+x+'</span>').join(""):'<span class="hint">حاول تاني عشان تكسب أوسمة 🎖</span>';refreshLinks();return p}
-let svT;function svLater(){clearTimeout(svT);svT=setTimeout(saveDb,900)}
+let svT;function svLater(){clearTimeout(svT);svT=setTimeout(()=>saveDb("rated"),900)}
 async function finish(force){if(done||(miss().length&&!force))return;done=true;if($("dlg").open)$("dlg").close();clearInterval(tm);
  $("exam").classList.add("hidden");$("top").classList.add("hidden");$("res").classList.remove("hidden");$("rname").textContent=name;
  $("rev").innerHTML=Q.map((x,i)=>{if(x.essay)return "";const ok=correct(i);const mine=ans[i]==null?"— لم تُجب —":(x.o?esc(x.o[ans[i]]):esc(ans[i]));const right=x.o?x.o[x.a]:x.t[0];
@@ -375,10 +376,7 @@ async function finish(force){if(done||(miss().length&&!force))return;done=true;i
   d.innerHTML='<div><span class="tag">'+x.tag+'</span></div><div class="en" style="margin:6px 0"><b>'+(i-OBJ+1)+". "+x.q+'</b></div><b>إجابتك ('+wcnt(ans[i])+' كلمة):</b><div class="mine">'+(ans[i]?esc(ans[i]):"— لم تُجب —")+'</div><b>الإجابة النموذجية:</b><div class="model">'+esc(x.m)+'</div><b>قيّم نفسك (كل بند = درجة):</b>';
   x.r.forEach((r,j)=>{const l=document.createElement("label");l.className="ck";const c=document.createElement("input");c.type="checkbox";c.onchange=()=>{mk[i][j]=c.checked;d.className="rv "+(mk[i].every(Boolean)?"ok":"no");const p=showScore();if(p>=75)confetti();svLater()};l.append(c,document.createTextNode(r));d.append(l)});ev.append(d)});
  const p=showScore();if(p>=75)confetti();window.scrollTo(0,0);
- refreshLinks();$("gst").textContent=autoSub?"⏰ انتهى الوقت — تم تسليم الامتحان تلقائيًا. ":"";$("gate").showModal();
- const ok=await saveDb();
- if(ok){$("gst").textContent+="✅ تم حفظ نتيجتك تلقائيًا عند مدرّسك. ";sentOK=true;chk()}
- else{$("gst").textContent+="⚠ الحفظ التلقائي غير متاح لحسابك — ابعت النتيجة بالواتساب (أو انسخ الرسالة وابعتها)."}}
+ sbox(false,"⏳ جاري إرسال إجاباتك لمدرّسك…");sendFinal()}
 let cft=0;function confetti(){if(Date.now()-cft<4000)return;cft=Date.now();const c=$("cv"),x=c.getContext("2d");c.width=innerWidth;c.height=innerHeight;const cols=["#c9a227","#f1d77a","#1b8f55","#6f9bff","#fff"];
  const ps=Array.from({length:150},()=>({x:Math.random()*c.width,y:-20-Math.random()*c.height*.5,r:4+Math.random()*6,vx:Math.random()*4-2,vy:2+Math.random()*4,c:cols[Math.random()*5|0],a:Math.random()*6}));let t=0;
  (function f(){x.clearRect(0,0,c.width,c.height);ps.forEach(q=>{q.x+=q.vx;q.y+=q.vy;q.a+=.1;x.fillStyle=q.c;x.save();x.translate(q.x,q.y);x.rotate(q.a);x.fillRect(-q.r,-q.r/2,q.r*2,q.r);x.restore()});if(++t<200)requestAnimationFrame(f);else x.clearRect(0,0,c.width,c.height)})()}
