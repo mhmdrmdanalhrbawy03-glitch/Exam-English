@@ -1,0 +1,739 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl" data-theme="dark">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>امتحان التاريخ – الوحدة الأولى – برعاية المطور محمد رمضان الحرباوي</title>
+<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;900&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#070b17;--bg2:#0d1428;--card:rgba(255,255,255,.045);--card2:rgba(255,255,255,.07);--line:rgba(255,255,255,.1);
+  --ink:#eef2ff;--mute:#9aa5c6;--gold:#e5bd5a;--gold2:#fbe9b0;--teal:#2dd4bf;--ok:#34d399;--bad:#fb7185;--warn:#fbbf24;
+  --sel:rgba(45,212,191,.14);--shadow:0 10px 40px rgba(0,0,0,.35);--hl:rgba(251,191,36,.28);
+}
+[data-theme="light"]{
+  --bg:#f6f2e8;--bg2:#fffdf7;--card:#ffffff;--card2:#fbf8ef;--line:#e6dfcb;--ink:#1a2140;--mute:#6b7390;
+  --gold:#a8791b;--gold2:#7a5610;--teal:#0f766e;--ok:#15803d;--bad:#be123c;--warn:#b45309;--sel:#e3f7f3;--shadow:0 8px 28px rgba(80,60,10,.12);--hl:#fde68a;
+}
+*{box-sizing:border-box;-webkit-tap-highlight-color:transparent}
+html{scroll-behavior:smooth}
+body{margin:0;font-family:'Cairo',system-ui,sans-serif;color:var(--ink);line-height:1.85;background:
+  radial-gradient(900px 500px at 85% -10%,rgba(229,189,90,.13),transparent 60%),
+  radial-gradient(700px 500px at 0% 10%,rgba(45,212,191,.10),transparent 55%),var(--bg);background-attachment:fixed;min-height:100vh}
+body.exam-on{-webkit-user-select:none;user-select:none}
+.wrap{max-width:920px;margin:0 auto;padding:18px 14px 110px}
+.hide{display:none!important}
+.card{background:var(--card);border:1px solid var(--line);border-radius:20px;padding:20px;margin-bottom:16px;box-shadow:var(--shadow);backdrop-filter:blur(8px)}
+h1,h2,h3,h4{margin:0}
+.sub{color:var(--mute);font-size:14px}
+.gold{background:linear-gradient(90deg,var(--gold2),var(--gold));-webkit-background-clip:text;background-clip:text;color:transparent}
+
+/* sponsor */
+.sponsor{display:inline-flex;align-items:center;gap:10px;padding:6px 18px;border-radius:99px;border:1px solid rgba(229,189,90,.5);
+  background:linear-gradient(90deg,rgba(229,189,90,.16),rgba(229,189,90,.05));font-size:14px;color:var(--gold2);font-weight:600}
+[data-theme="light"] .sponsor{color:#6b4a0c;background:#fff7dd}
+.sponsor b{font-weight:900;color:var(--gold)}
+.sponsor i{font-style:normal;color:var(--gold)}
+
+/* hero */
+.hero{position:relative;overflow:hidden;text-align:center;padding:34px 18px 28px;border-radius:26px;margin-bottom:18px;
+  background:linear-gradient(160deg,#0e1a3a,#0b1226 55%,#16122a);border:1px solid rgba(229,189,90,.35);box-shadow:var(--shadow);color:#eef2ff}
+.hero:before{content:"";position:absolute;inset:0;opacity:.55;background:
+  repeating-linear-gradient(45deg,transparent 0 22px,rgba(229,189,90,.05) 22px 23px),
+  repeating-linear-gradient(-45deg,transparent 0 22px,rgba(229,189,90,.05) 22px 23px)}
+.hero>*{position:relative}
+.hero svg.pyr{width:130px;height:auto;margin:6px auto 4px;display:block;filter:drop-shadow(0 6px 18px rgba(229,189,90,.35))}
+.hero h1{font-size:clamp(24px,5vw,36px);font-weight:900;margin:8px 0 4px}
+.hero .sub{color:#b8c3e6}
+.tiles{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin-top:20px}
+.tile{background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.12);border-radius:14px;padding:10px 4px}
+.tile b{display:block;font-size:22px;color:var(--gold);line-height:1.2}.tile span{font-size:12px;color:#b8c3e6}
+@media(max-width:560px){.tiles{grid-template-columns:repeat(2,1fr)}}
+
+/* form */
+label{display:block;font-weight:700;margin:14px 0 5px;font-size:14px}
+input,textarea{width:100%;padding:13px 15px;border-radius:14px;border:1.5px solid var(--line);background:var(--card2);color:var(--ink);font:inherit;font-size:16px;-webkit-user-select:text;user-select:text;transition:.15s}
+input:focus,textarea:focus{outline:none;border-color:var(--gold);box-shadow:0 0 0 4px rgba(229,189,90,.15)}
+textarea{resize:vertical;min-height:130px;line-height:1.9}
+textarea[readonly]{opacity:.75;cursor:not-allowed}
+.row{display:flex;gap:12px;flex-wrap:wrap}.row>*{flex:1;min-width:190px}
+ul.rules{padding-right:20px;margin:12px 0;color:var(--mute);font-size:14px}
+ul.rules li{margin:3px 0}
+
+/* buttons */
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;border:0;border-radius:14px;padding:13px 22px;font:inherit;font-weight:800;font-size:16px;cursor:pointer;transition:.15s;
+  background:linear-gradient(135deg,var(--gold),#c99a2c);color:#241a02;box-shadow:0 6px 20px rgba(229,189,90,.25)}
+.btn:hover{filter:brightness(1.06);transform:translateY(-1px)}.btn:active{transform:scale(.98)}
+.btn.full{width:100%}
+.btn.ghost{background:transparent;color:var(--gold);border:1.5px solid rgba(229,189,90,.55);box-shadow:none}
+.btn.wa{background:linear-gradient(135deg,#25d366,#128c7e);color:#032b14;box-shadow:0 6px 20px rgba(37,211,102,.25)}
+.btn.sm{padding:8px 14px;font-size:14px;border-radius:11px}
+.btn[disabled]{opacity:.5;cursor:not-allowed}
+.status{font-size:14px;padding:10px 14px;border-radius:12px;margin:10px 0}
+.status.ok{background:rgba(52,211,153,.14);color:var(--ok)}.status.err{background:rgba(251,113,133,.14);color:var(--bad)}.status.wait{background:rgba(56,189,248,.14);color:#38bdf8}
+
+/* header */
+.hdr{position:sticky;top:0;z-index:30;background:color-mix(in srgb,var(--bg) 88%,transparent);backdrop-filter:blur(14px);border-bottom:1px solid var(--line);padding:calc(8px + env(safe-area-inset-top,0px)) 14px 8px}
+.hdr-in{max-width:920px;margin:0 auto}
+.hdr-top{display:flex;align-items:center;justify-content:space-between;gap:10px}
+.hdr .sponsor{padding:3px 12px;font-size:12px}
+.tm{display:flex;align-items:center;gap:8px;font-weight:900;font-size:20px;font-variant-numeric:tabular-nums;color:var(--teal)}
+.tm svg{width:40px;height:40px;transform:rotate(-90deg)}
+.tm.low{color:var(--bad);animation:pulse 1s infinite}
+@keyframes pulse{50%{opacity:.5}}
+.tabs{display:flex;gap:8px;margin-top:8px;align-items:center}
+.tab{flex:1;background:var(--card);border:1px solid var(--line);color:var(--ink);padding:6px 10px;border-radius:12px;font:inherit;font-weight:700;font-size:13px;cursor:pointer;text-align:center}
+.tab b{color:var(--gold);margin-right:4px}
+.tab.on{border-color:var(--gold);background:rgba(229,189,90,.12)}
+.prog{height:5px;background:var(--line);border-radius:99px;overflow:hidden;margin-top:8px}
+.prog i{display:block;height:100%;width:0;background:linear-gradient(90deg,var(--gold),var(--teal));transition:width .3s}
+.theme{background:var(--card);border:1px solid var(--line);color:var(--ink);width:36px;height:36px;border-radius:50%;cursor:pointer;font-size:16px}
+
+/* nav */
+.nav{display:grid;grid-template-columns:repeat(auto-fill,minmax(36px,1fr));gap:6px;margin-top:12px}
+.nav a{height:36px;display:flex;align-items:center;justify-content:center;border-radius:10px;border:1.5px solid var(--line);font-size:13px;font-weight:700;color:var(--mute);text-decoration:none;background:var(--card2)}
+.nav a.done{background:var(--teal);border-color:var(--teal);color:#042f2a}
+.nav a.ess{border-style:dashed}.nav a.ess.done{background:var(--gold);border-color:var(--gold);color:#241a02}
+.sec-h{display:flex;align-items:center;gap:12px;margin:26px 2px 12px}
+.sec-h h2{font-size:21px;font-weight:900}.sec-h:after{content:"";flex:1;height:1px;background:linear-gradient(90deg,var(--gold),transparent)}
+.sec-h small{color:var(--mute);font-weight:600}
+
+/* question */
+.q{scroll-margin-top:140px;position:relative}
+.qh{display:flex;gap:12px;align-items:flex-start}
+.qn{flex:none;min-width:38px;height:38px;border-radius:12px;background:linear-gradient(135deg,var(--gold),#c99a2c);color:#241a02;font-weight:900;display:flex;align-items:center;justify-content:center;font-size:15px}
+.qn.e{background:linear-gradient(135deg,var(--teal),#0ea5a0);color:#032a26}
+.qt{font-weight:700;font-size:17px;margin:0}
+.tag{display:inline-block;font-size:11.5px;color:var(--mute);border:1px solid var(--line);border-radius:99px;padding:0 10px;margin-top:3px}
+.opts{display:grid;gap:9px;margin-top:14px}
+.opt{display:flex;gap:12px;align-items:center;text-align:right;width:100%;padding:12px 14px;border-radius:14px;border:1.5px solid var(--line);background:var(--card2);color:var(--ink);font:inherit;font-size:16px;cursor:pointer;transition:.12s}
+.opt:hover{border-color:var(--gold);transform:translateX(-2px)}
+.opt .l{flex:none;width:30px;height:30px;border-radius:50%;border:1.5px solid var(--line);display:flex;align-items:center;justify-content:center;font-weight:800;font-size:13px}
+.opt.sel{background:var(--sel);border-color:var(--teal)}.opt.sel .l{background:var(--teal);color:#042f2a;border-color:var(--teal)}
+.opt.right{background:rgba(52,211,153,.16);border-color:var(--ok)}.opt.right .l{background:var(--ok);color:#032;border-color:var(--ok)}
+.opt.wrong{background:rgba(251,113,133,.16);border-color:var(--bad)}.opt.wrong .l{background:var(--bad);color:#fff;border-color:var(--bad)}
+.opt.static{cursor:default}.opt.static:hover{transform:none;border-color:var(--line)}
+.opt.right.static:hover{border-color:var(--ok)}.opt.wrong.static:hover{border-color:var(--bad)}
+
+/* essay */
+.eb{display:flex;justify-content:space-between;align-items:center;gap:10px;margin-top:10px;flex-wrap:wrap}
+.wc{font-size:13px;color:var(--mute)}
+.lockn{font-size:13px;color:var(--warn);margin-top:8px}
+.cmp{margin-top:16px;border:1px solid rgba(229,189,90,.4);border-radius:18px;padding:14px;background:linear-gradient(180deg,rgba(229,189,90,.07),transparent)}
+.cmp-top{display:flex;align-items:center;gap:14px;flex-wrap:wrap}
+.cov{--p:0;width:74px;height:74px;border-radius:50%;background:conic-gradient(var(--c,var(--teal)) calc(var(--p)*1%),var(--line) 0);display:flex;align-items:center;justify-content:center;flex:none}
+.cov span{width:58px;height:58px;border-radius:50%;background:var(--bg2);display:flex;align-items:center;justify-content:center;font-weight:900;font-size:16px}
+.cmp-top .t b{font-size:16px}.cmp-top .t div{font-size:13px;color:var(--mute)}
+.cmp-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:14px}
+@media(max-width:700px){.cmp-grid{grid-template-columns:1fr}}
+.col{border-radius:14px;border:1px solid var(--line);background:var(--card2);padding:12px}
+.col h4{font-size:15px;margin-bottom:8px}
+.col.mine h4{color:var(--teal)}.col.model h4{color:var(--gold)}
+.mine-t{white-space:pre-wrap;font-size:15px;min-height:60px}
+.mine-t mark{background:var(--hl);color:inherit;border-radius:5px;padding:0 3px;box-shadow:0 0 0 1px rgba(251,191,36,.35)}
+.empty{color:var(--mute);font-style:italic}
+ol.mp{margin:0;padding:0;list-style:none;display:grid;gap:9px}
+ol.mp li{border:1px solid var(--line);border-radius:12px;padding:9px 11px;font-size:15px;position:relative}
+ol.mp li .bd{display:inline-flex;align-items:center;gap:5px;font-size:12px;font-weight:800;border-radius:99px;padding:0 9px;margin-left:6px}
+li.full{border-color:rgba(52,211,153,.55);background:rgba(52,211,153,.09)}li.full .bd{background:var(--ok);color:#022}
+li.part{border-color:rgba(251,191,36,.55);background:rgba(251,191,36,.08)}li.part .bd{background:var(--warn);color:#241a02}
+li.miss{border-color:rgba(251,113,133,.5);background:rgba(251,113,133,.08)}li.miss .bd{background:var(--bad);color:#fff}
+.kw{display:flex;flex-wrap:wrap;gap:5px;margin-top:6px}.kw em{font-style:normal;font-size:12px;border:1px dashed rgba(251,113,133,.6);color:var(--bad);border-radius:99px;padding:0 9px}
+.legend{display:flex;gap:12px;flex-wrap:wrap;font-size:12px;color:var(--mute);margin-top:10px}
+
+/* submit bar */
+.sbar{position:fixed;bottom:0;right:0;left:0;z-index:30;background:color-mix(in srgb,var(--bg) 90%,transparent);backdrop-filter:blur(14px);border-top:1px solid var(--line);padding:10px 14px calc(10px + env(safe-area-inset-bottom,0px))}
+.sbar>div{max-width:920px;margin:0 auto}
+.warn{background:rgba(251,191,36,.14);color:var(--warn);border-radius:12px;padding:8px 12px;font-size:13px;margin-bottom:12px;display:none}
+
+/* result */
+.rhero{text-align:center;position:relative;overflow:hidden}
+.ring{--p:0;width:170px;height:170px;border-radius:50%;margin:10px auto;display:flex;align-items:center;justify-content:center;background:conic-gradient(var(--gold) calc(var(--p)*1%),var(--line) 0)}
+.ring span{width:140px;height:140px;border-radius:50%;background:var(--bg2);display:flex;flex-direction:column;align-items:center;justify-content:center;font-size:38px;font-weight:900;line-height:1.1}
+.ring span small{font-size:12px;color:var(--mute);font-weight:600}
+.stats{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-top:14px}
+@media(max-width:560px){.stats{grid-template-columns:1fr}}
+.stat{background:var(--card2);border:1px solid var(--line);border-radius:14px;padding:10px}
+.stat b{display:block;font-size:22px;color:var(--gold)}.stat span{font-size:13px;color:var(--mute)}
+.lb{display:flex;justify-content:space-between;gap:10px;margin:12px 0 3px;font-size:14px;font-weight:700}
+.lbar{height:10px;background:var(--line);border-radius:99px;overflow:hidden}.lbar>i{display:block;height:100%}
+.rt{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:14px}
+.rt .tab{flex:none;padding:8px 16px}
+table{width:100%;border-collapse:collapse;font-size:15px}td,th{padding:7px 8px;text-align:right;border-bottom:1px solid var(--line)}
+.foot{text-align:center;margin:26px 0 8px}.foot .sub{margin-top:8px}
+.modal{position:fixed;inset:0;background:rgba(0,0,0,.6);z-index:60;display:flex;align-items:center;justify-content:center;padding:16px;backdrop-filter:blur(4px)}
+.modal .card{max-width:430px;width:100%;margin:0;background:var(--bg2)}
+canvas#cf{position:fixed;inset:0;pointer-events:none;z-index:70}
+@media print{.sbar,.hdr,.btn,.rt,.theme,#cf{display:none!important}body{background:#fff;color:#000}.card{box-shadow:none;border:1px solid #bbb}.hide.print-show{display:block!important}}
+</style>
+</head>
+<body>
+<canvas id="cf"></canvas>
+
+<!-- ============ البداية ============ -->
+<div id="s-start" class="wrap">
+  <div class="hero">
+    <div class="sponsor"><i>✦</i> برعاية المطور : <b>محمد رمضان الحرباوي</b> <i>✦</i></div>
+    <svg class="pyr" viewBox="0 0 200 110" aria-hidden="true"><defs><linearGradient id="g1" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#fbe9b0"/><stop offset="1" stop-color="#c99a2c"/></linearGradient></defs>
+      <polygon points="100,8 168,100 32,100" fill="url(#g1)"/><polygon points="100,8 168,100 100,100" fill="rgba(0,0,0,.18)"/>
+      <polygon points="150,48 196,100 120,100" fill="url(#g1)" opacity=".75"/><polygon points="52,60 92,100 12,100" fill="url(#g1)" opacity=".6"/>
+      <circle cx="100" cy="40" r="3.5" fill="#fff" opacity=".9"/></svg>
+    <h1 class="gold">امتحان التاريخ الشامل</h1>
+    <div style="font-weight:700;font-size:18px">الوحدة الأولى · مصر بين الماضي والحاضر</div>
+    <div class="sub">الصف الثاني الثانوي (تانية بكالوريا) · الترم الأول 2027</div>
+    <div class="tiles">
+      <div class="tile"><b id="t-m"></b><span>اختيار من متعدد</span></div>
+      <div class="tile"><b id="t-e"></b><span>سؤال مقالي</span></div>
+      <div class="tile"><b id="t-t"></b><span>دقيقة</span></div>
+      <div class="tile"><b>100</b><span>درجة</span></div>
+    </div>
+  </div>
+  <div class="card">
+    <label for="f-name">الاسم بالكامل *</label>
+    <input id="f-name" placeholder="مثال: أحمد محمد علي" autocomplete="name">
+    <div class="row">
+      <div><label for="f-phone">رقم الموبايل (واتساب) *</label><input id="f-phone" inputmode="tel" placeholder="01XXXXXXXXX" autocomplete="tel"></div>
+      <div><label for="f-grp">المجموعة / السنتر</label><input id="f-grp" placeholder="اختياري"></div>
+    </div>
+    <ul class="rules">
+      <li>الامتحان صفحة واحدة بعداد واحد، وبيتسلّم تلقائي أول ما الوقت يخلص.</li>
+      <li>قسم الاختيار (50 درجة) بيتصحح فورًا، وقسم المقالي (50 درجة) بيتقيّم مبدئيًا بمقارنة إجابتك بالنموذج.</li>
+      <li>في المقالي تقدر تفتح <b>نموذج الإجابة</b> وتقارنه بإجابتك قبل التسليم، وبعد ما تفتحه الإجابة بتتقفل.</li>
+      <li>ترتيب أسئلة الاختيار واختياراتها بيتغيّر من طالب لطالب، والخروج من الصفحة بيتسجّل.</li>
+      <li>محاولة واحدة على الجهاز، وكل إجاباتك بتتحفظ تلقائيًا.</li>
+    </ul>
+    <div id="f-err" class="status err hide"></div>
+    <button class="btn full" id="b-start">ابدأ الامتحان ▶</button>
+  </div>
+  <div class="foot"><div class="sponsor"><i>✦</i> برعاية المطور : <b>محمد رمضان الحرباوي</b> <i>✦</i></div></div>
+</div>
+
+<!-- ============ الامتحان ============ -->
+<div id="s-exam" class="hide">
+  <header class="hdr"><div class="hdr-in">
+    <div class="hdr-top">
+      <div class="sponsor"><i>✦</i> برعاية المطور : <b>محمد رمضان الحرباوي</b></div>
+      <div style="display:flex;gap:10px;align-items:center">
+        <div class="tm" id="tm"><svg viewBox="0 0 44 44"><circle cx="22" cy="22" r="18" fill="none" stroke="var(--line)" stroke-width="4"/><circle id="ring-t" cx="22" cy="22" r="18" fill="none" stroke="currentColor" stroke-width="4" stroke-linecap="round" stroke-dasharray="113.1" stroke-dashoffset="0"/></svg><span id="timer">00:00</span></div>
+        <button class="theme" id="b-theme2" title="الوضع">◐</button>
+      </div>
+    </div>
+    <div class="tabs">
+      <button class="tab on" data-go="sec-m">الاختيار <b id="p-m">0/50</b></button>
+      <button class="tab" data-go="sec-e">المقالي <b id="p-e">0/14</b></button>
+    </div>
+    <div class="prog"><i id="prog"></i></div>
+  </div></header>
+  <div class="wrap">
+    <div class="warn" id="warn"></div>
+    <div class="card"><b id="who"></b><div class="sub">اضغط على رقم السؤال للانتقال إليه</div><div class="nav" id="nav"></div></div>
+    <div class="sec-h" id="sec-m"><h2 class="gold">القسم الأول: الاختيار من متعدد</h2><small id="sm-m"></small></div>
+    <div id="qs"></div>
+    <div class="sec-h" id="sec-e"><h2 class="gold">القسم الثاني: الأسئلة المقالية</h2><small id="sm-e"></small></div>
+    <div class="status wait">✍️ اكتب إجابتك بأسلوبك، وتقدر تفتح «نموذج الإجابة والمقارنة» لأي سؤال قبل التسليم (الإجابة بتتقفل بعد فتحه).</div>
+    <div id="es"></div>
+    <div class="foot"><div class="sponsor"><i>✦</i> برعاية المطور : <b>محمد رمضان الحرباوي</b> <i>✦</i></div></div>
+  </div>
+  <div class="sbar"><div><button class="btn full" id="b-submit">تسليم الامتحان ✔</button></div></div>
+</div>
+
+<!-- ============ النتيجة ============ -->
+<div id="s-res" class="wrap hide">
+  <div class="card rhero">
+    <div class="sponsor"><i>✦</i> برعاية المطور : <b>محمد رمضان الحرباوي</b> <i>✦</i></div>
+    <div class="sub" style="margin-top:10px" id="r-name"></div>
+    <div class="ring" id="ring"><span><i id="r-pct" style="font-style:normal"></i><small>من 100</small></span></div>
+    <h2 id="r-msg" class="gold"></h2>
+    <div class="sub" id="r-meta"></div>
+    <div class="stats">
+      <div class="stat"><b id="r-mcq"></b><span>الاختيار / 50</span></div>
+      <div class="stat"><b id="r-es"></b><span>المقالي (تقدير مبدئي) / 50</span></div>
+      <div class="stat"><b id="r-time"></b><span>الوقت المستغرق</span></div>
+    </div>
+  </div>
+  <div id="r-status" class="status wait">⏳ جاري إرسال النتيجة للسيرفر...</div>
+  <div class="rt">
+    <button class="tab on" data-rt="rp-sum">الملخص</button>
+    <button class="tab" data-rt="rp-mcq">مراجعة الاختيار</button>
+    <button class="tab" data-rt="rp-es">المقالي: المقارنة</button>
+    <button class="tab" data-rt="rp-lb">لوحة الشرف</button>
+  </div>
+  <div id="rp-sum">
+    <div class="card"><h3 class="gold">أداؤك حسب الدرس (اختيار + مقالي)</h3><div id="r-les"></div></div>
+    <div class="card"><div class="row">
+      <button class="btn wa" id="b-wa">📲 ابعت نتيجتك للمدرس على واتساب</button>
+      <button class="btn ghost" id="b-share">🔗 شارك الامتحان مع زمايلك</button>
+      <button class="btn ghost" id="b-print">🖨 حفظ / طباعة النتيجة</button>
+    </div><button class="btn ghost full" id="b-retry" style="margin-top:10px" hidden>🔄 إعادة محاولة إرسال النتيجة</button></div>
+  </div>
+  <div id="rp-mcq" class="hide print-show">
+    <div class="row" style="margin-bottom:12px"><button class="btn ghost sm" id="b-all">كل الأسئلة</button><button class="btn ghost sm" id="b-wrong">الغلط بس</button></div>
+    <div id="review"></div>
+  </div>
+  <div id="rp-es" class="hide print-show"><div id="es-review"></div></div>
+  <div id="rp-lb" class="hide"><div class="card"><h3 class="gold">🏆 لوحة الشرف</h3><table id="lb"></table><div id="lb-empty" class="sub">لوحة الشرف هتظهر بعد ما النتيجة تتسجل على السيرفر.</div></div></div>
+  <div class="foot"><div class="sponsor"><i>✦</i> برعاية المطور : <b>محمد رمضان الحرباوي</b> <i>✦</i></div></div>
+</div>
+
+<div id="modal" class="modal hide"><div class="card" id="modal-c"></div></div>
+
+<script>
+/* ============================================================
+   ⚙️ الإعدادات
+   ============================================================ */
+const CONFIG = {
+  SUPABASE_URL: "https://bekfemtkhhluktidhcyi.supabase.co",
+  SUPABASE_ANON_KEY: "PASTE_YOUR_SUPABASE_ANON_KEY_HERE",
+  TABLE: "exam_results",
+  LEADERBOARD_VIEW: "exam_leaderboard",       // "" لإلغاء لوحة الشرف
+  EXAM_ID: "history-2b-2027-t1-unit1-v2",
+  DURATION_MIN: 90,
+  TEACHER_WHATSAPP: "20XXXXXXXXXX",           // رقم المدرس دولي بدون +
+  SHUFFLE_QUESTIONS: true,
+  SHUFFLE_OPTIONS: true,
+  SHOW_MODEL_BEFORE_SUBMIT: true,             // عرض نموذج الإجابة قبل التسليم
+  LOCK_AFTER_REVEAL: true,                    // قفل إجابة السؤال بعد فتح النموذج
+  MIN_WORDS: 4,
+  MCQ_MARKS: 50, ESSAY_MARKS: 50,
+  MAX_SWITCH_WARN: 3,
+  SPONSOR: "محمد رمضان الحرباوي"
+};
+
+const LESSONS = ["الدرس 1: بناء الدولة المصرية واستمراريتها","الدرس 2: الدولة القديمة ومقاومة الاحتلال","الدرس 3: التحولات الكبرى – العصر الوسيط","الدرس 4: التحولات الكبرى – العصر الحديث"];
+
+/* ===== الاختيار: [السؤال, الصحيحة, خطأ1, خطأ2, خطأ3, الدرس] ===== */
+const Q = [
+["تعبّر صورة الإدلاء بالأصوات في الانتخابات عن دور الشعب الفعّال في ...","المشاركة السياسية","المساهمة في تحقيق التنمية الاقتصادية","الدفاع عن الوطن","الحفاظ على هوية المجتمع",0],
+["يتمثل العنصر المشترك بين المادتين (139) و(163) من الدستور المصري (رئيس الجمهورية والحكومة) في ...","تنفيذ الخطط السياسية للدولة","ممارسة مهام السلطة القضائية","الفصل في النزاعات الدولية","مراقبة أعمال السلطة التنفيذية",0],
+["استطاعت مصر عبر تاريخها الطويل تجاوز عديد من الأزمات والتدخلات الخارجية، ويرجع ذلك إلى عدة عوامل أهمها ...","نضج الوعي المجتمعي","اتساع الرقعة الجغرافية","قوة السلطة التشريعية","ثبات الحدود السياسية",0],
+["يُستدل من ممارسة السلطة التشريعية الرقابة على أعمال السلطة التنفيذية على ...","التكامل بين السلطات","قوة السلطة التنفيذية","أهمية الحياة النيابية","المشاركة الاقتصادية للشعب",0],
+["يُعد التزام المواطنين بسداد الضرائب المقررة ومساندة المؤسسات الخدمية والاقتصادية انعكاسًا مباشرًا لـ ...","فعالية المشاركة المجتمعية","قوة السلطة القضائية","كفاءة المؤسسات التشريعية","تحقيق السيادة الداخلية",0],
+["«تُمنع أي طائرة أجنبية من دخول المجال الجوي المصري دون الحصول على تصريح رسمي». تُعد العبارة السابقة تأكيدًا على تحقيق ...","السيادة المطلقة","المشاركة المجتمعية","التنمية الاقتصادية","الرقابة الشعبية",0],
+["يدل قيام الرئيس جمال عبد الناصر بإصدار قرار تأميم قناة السويس على ...","استقلال القرار الوطني","قوة السلطة التشريعية","التكامل بين سلطات الدولة","توفير الحماية لحدود الدولة",0],
+["يبرز رسم الحدود البحرية للدولة المصرية بشكل دقيق أهمية الحيز الجغرافي في ...","حماية الموارد الاستراتيجية وتحقيق الأمن القومي","إضفاء الشرعية القانونية الكاملة على السلطة التنفيذية","تسهيل مشاركة المواطنين في الحياة السياسية","الحفاظ على هوية المجتمع وحماية تراثه الثقافي",0],
+["شكّلت صحارى مصر الشرقية والغربية في العصور القديمة ...","دروعًا استراتيجية وقائية","عوائق أمام الاستقرار السياسي","حدودًا سياسية معترفًا بها","مناطق خالية من الموارد",0],
+["يُستنتج من نجاح المصريين القدماء في الاستفادة من نهر النيل لتوحيد الأقاليم تحت سلطة واحدة ...","مساهمة البيئة الطبيعية في الوصول للنضج السياسي","اقتصار وجود السلطة على الأنشطة الاقتصادية","الاعتماد المطلق على النشاط الصناعي","أهمية استخدام نهر النيل كحد طبيعي",0],
+["ترجع استمرارية الدولة المصرية ككيان موحد عبر مختلف العصور التاريخية بشكل رئيسي إلى ...","التكامل بين مقوماتها الطبيعية والبشرية","تطوير الأسلحة والمعدات الحربية","اتساع السهول الفيضية والساحلية","تأثرها بموقعها المتميز في قلب العالم القديم",0],
+["تمثل القدرة على إدارة الأزمات الكبرى كالجفاف والفيضان في مصر القديمة اختبارًا حقيقيًا لـ ...","كفاءة وقوة مؤسسات الدولة","قوة الحدود الطبيعية للدولة","مدى صلابة التحالفات الخارجية","أهمية الموقع الجغرافي المتميز",0],
+["يُعتبر مفهوم «الحدود الآمنة» في تاريخ مصر القديم مرنًا يعتمد بشكل رئيسي على ...","يقظة السلطة ومدى قوتها العسكرية","كثرة عدد السكان في المناطق الحدودية","وجود الموانع الطبيعية البحرية","الاتفاقيات المكتوبة مع الدول المجاورة",0],
+["يرتبط مفهوم «دولة برزخ» الذي أطلقه جمال حمدان على مصر في كتابه «شخصية مصر» عبر العصور بـ ...","موقعها كحلقة وصل بين القارات","اتساع مساحة الصحاري بها","جريان نهر النيل على أرضها","طول سواحلها على البحار",0],
+["تمثل الوحدة الوطنية أحد الدروس المستفادة من دراسة تاريخ بناء الدولة المصرية لأنها ...","ركيزة أساسية للأمن القومي","نتيجة طبيعية للموقع البحري","شرط ثانوي لاستقرار الحكم","هدف لتحقيق التوسع الخارجي",0],
+["يعود الفضل في نشأة أول نظام لإدارة محكم داخل مصر إلى عدة عوامل أهمها ...","الحاجة لتنظيم الموارد المائية","الرغبة في التوسع الخارجي","التأثر بأنظمة الحكم المجاورة","السعي لتأمين الطرق التجارية",0],
+["أي من الآتي تأثر سلبيًا بمصر بشكل واضح نتيجة نجاح الهكسوس في احتلالها؟","السيادة الوطنية","الخصائص العقائدية","الموقع الجغرافي","التجانس الشعبي",1],
+["بدل نجاح الملك أحمس في إخضاع حكام الأقاليم تحت سلطته على فاعلية ركنين من أركان الدولة وهما ...","السلطة والسيادة","الشعب والحيز الجغرافي","الحيز الجغرافي والسلطة","السيادة والشعب",1],
+["أي من مقومات نشأة الدولة وعوامل استمرارها التالية تسبب ضعفه بشكل مباشر في سقوط مصر في يد الهكسوس والفرس؟","الحكومة المركزية","الحدود الطبيعية","الهوية المصرية","التجانس البشري",1],
+["اعتمد الملك كامس في حرب التحرير ضد الهكسوس على عدة استراتيجيات منها ...","فصل العدو عن محيطه الإقليمي","الاعتماد المباشر على القوى الخارجية","التركيز على استخدام الأساطيل البحرية","التركيز على الحلول الدبلوماسية",1],
+["يمثل الهدف المباشر لادعاء الإسكندر الأكبر انتسابه للإله آمون فور دخوله مصر في حرصه على ...","اكتساب الشرعية السياسية والدينية","تحويل مصر مركزًا تجاريًا","فرض الثقافة اليونانية بالقوة","استمالة المصريين لمواجهة الرومان",1],
+["تعددت ثورات المصريين ضد الحكم الروماني بسبب عدة عوامل منها ...","استنزاف الرومان للمصريين اقتصاديًا","رفض الرومان تشييد معابد جديدة","دعم أعضاء مجلس الشيوخ الروماني للمصريين","تمسك المصريين باستعادة الدولة البطلمية",1],
+["حاول الهكسوس إحكام سيطرتهم على شمال مصر من خلال عدة وسائل منها ...","اتخاذ عاصمة لهم في شرق الدلتا","اندماجهم الكامل داخل المجتمع المصري","نشر عقائدهم الدينية بين أفراد الشعب","الاهتمام بالتنمية الشاملة",1],
+["أي من الآتي كان بمثابة حجر عثرة أمام الرومان طوال مدة بقائهم في مصر؟","الهوية الوطنية","الحدود الطبيعية","القوة العسكرية","الحكومة المركزية",1],
+["اتسمت المقاومة المصرية ضد الاحتلال الأجنبي عبر التاريخ القديم بـ ...","الاستمرارية وعدم الاستسلام للواقع","الاقتصار على النخبة الحاكمة","التأثر بالمساعدات والتدخلات الخارجية","تضاؤل المقاومة في المدن الكبرى",1],
+["يتمثل وجه الشبه بين المقاومة المصرية ضد كل من الهكسوس والرومان في ...","الدافع الوطني الرافض للسيطرة والاستنزاف","استخدام أسلحة وتكتيكات موحدة","الاعتماد على قيادة أمراء طيبة للمقاومة","الحصول على الدعم المباشر من الدول المجاورة",1],
+["اتخذت المقاومة المصرية ضد الحكم الروماني مظاهر متعددة منها ...","تكرار الثورات والمحافظة على الهوية","اتباع الحلول الدبلوماسية لتحقيق الاستقلال","اللجوء للصحراء واتخاذها نقطة لانطلاق المقاومة","عقد التحالفات العسكرية مع الإغريق",1],
+["يُستنتج من موقف أهل الصعيد تجاه الهكسوس أن منطقة الصعيد بمصر شكلت ...","قلعة الصمود ونواة التحرير الوطني","منطقة هامشية بعيدة عن القرار السياسي","مركزًا للتفاهم والصلح مع الغزاة","منطقة تعتمد اقتصاديًا على الشمال",1],
+["تعرضت مصر للغزو الفارسي عام 525 ق.م بقيادة قمبيز الثاني نتيجة ...","الاضطراب السياسي والصراع الداخلي","مساندة ملوك مملكة كوش للفرس","الصراع بين الإغريق والفرس","رغبة المصريين في تغيير نظام الحكم",1],
+["تأثرت مصر سلبيًا إبان فترة الاحتلال الروماني نتيجة تحويلها إلى ...","مخزن لتزويد الإمبراطورية الرومانية بالغلال","مركز رئيسي للصناعات التقليدية","قاعدة رومانية لانطلاق الجيوش","سوق للتجارة الحرة بدون ضرائب",1],
+["كان الهدف الاستراتيجي لتأسيس مدينة الإسكندرية على يد الإسكندر الأكبر هو ...","وجود قاعدة تدعم سيطرته على البحر المتوسط","جعلها مركزًا لاستقبال المهاجرين من أوروبا وآسيا","إلغاء دور العاصمة القديمة منف نهائيًا","الاستفادة من المواد الخام الحجرية المصرية",1],
+["يُستدل من لجوء الرومان للشدة والبطش ضد الثورات المصرية على ...","إدراكهم أهمية مصر في استقرار دولتهم","خشيتهم من تحالف المصريين مع الفرس","اطمئنانهم لثبات حكمهم في مصر","خوفهم من عودة البطالمة لحكم مصر",1],
+["يرجع تحول مصر إلى ولاية رومانية عام 30 ق.م إلى ...","معاناة دولة البطالمة من الأزمات الداخلية","ترحيب المصريين بالحكم الروماني","اعتماد البطالمة على الجنود المرتزقة","تحالف الرومان مع الفرس ضد البطالمة",1],
+["أي مما يلي يُعد أحد الدروس المستفادة من دراسة ثورات المصريين ضد الاحتلال عبر التاريخ القديم؟","الشعوب الواعية تبذل التضحيات من أجل الحرية","القوة العسكرية وحدها كافية لتحقيق النصر","الاعتراف بالحاكم الأجنبي يحقق الاستقرار","الحلول السلمية هي الاختيار الأمثل لتخطي الأزمات",1],
+["تمثلت القيمة الجوهرية لبناء المدن الإسلامية المتعاقبة في مصر مثل «الفسطاط، القطائع، القاهرة» في ...","تأسيس مجتمع حضري متكامل","استيعاب هجرات السكان الداخلية","زيادة حجم الإنتاج الصناعي","التركيز على الجوانب العسكرية",2],
+["لعبت مصر خلال الحروب الصليبية دورًا رئيسيًا تمثل في كونها ...","قلعة الدفاع ومفتاح حسم الصراع الدائر","عاصمة ومركزًا رئيسيًا للخلافة الإسلامية","مركزًا لنشر الإسلام في شمال إفريقيا","نقطة انطلاق الجيوش نحو أوروبا",2],
+["لعب الأزهر الشريف خلال العصرين المملوكي والعثماني دورًا تجاوز الشق التعليمي إلى ...","قيادة الرأي العام والمطالبة بالحقوق الاجتماعية","تولي قيادة الجيوش العسكرية ميدانيًا","جباية الضرائب لصالح السلطة الحاكمة","القيام بدور الوسيط في المعاملات التجارية",2],
+["احتلت مصر مكانة اقتصادية كبيرة خلال العصر الوسيط نتيجة عدة عوامل أهمها تمثلت في كونها ...","حلقة وصل رئيسية بين الشرق والغرب","مصدرًا وحيدًا للصناعات الفاخرة","مركزًا رئيسيًا لسك العملات المعدنية","قاعدة عسكرية لحماية حدود الدولة الإسلامية",2],
+["يُستنتج من استعانة الخلفاء والسلاطين بالعلماء في إدارة الشئون العامة خلال العصر الوسيط ...","ارتفاع مكانة العلماء في المجتمع","تطبيق نظام الحكم الديمقراطي","ضعف مؤهلات القيادة السياسية","رغبة العلماء في الوصول للسلطة",2],
+["يرجع السبب الرئيسي لظهور الدول المستقلة بمصر خلال العصر العباسي الثاني إلى ...","ضعف السلطة المركزية ببغداد","كراهية المصريين للخلافة العباسية","موقع مصر الجغرافي","قوة مصر الاقتصادية",2],
+["تشابه كل من رواد تيار الإصلاح الديني والتيار الليبرالي في العصر الحديث في مصر في ...","السعي لبناء دولة حديثة مستقلة","إصلاح الفكر الديني وتحريره من الخرافات","الاستفادة من النهضة الأوروبية","رفض التطوير المؤسسي للتعليم",3],
+["استهدف محمد علي من تطبيق نظام الاحتكار الاقتصادي في مصر ...","تنظيم الاقتصاد وزيادة موارد الدولة","رفع مستوى المعيشة لسكان الريف","زيادة إيرادات الدولة العثمانية","فتح الباب لاستيراد السلع الخارجية",3],
+["شكّل افتتاح قناة السويس في العصر الحديث تحولًا كبيرًا بالنسبة لمصر حيث أدى إلى ...","زيادة الأطماع الخارجية للسيطرة على مصر","تراجع إيرادات مصر من حركة التجارة الدولية","نجاح مصر في الاستقلال عن الخلافة العثمانية","منح مصر قدرًا أكبر من الاستقلال الإداري",3],
+["يمكن تفسير العلاقة بين مشروعات التحديث والتدخل الأجنبي في مصر خلال القرن 19 بأن مشروعات التحديث ...","أدت إلى زيادة الحاجة للتمويل الخارجي","أدت إلى الاستقلال الكامل","كانت منفصلة عن التدخل الأجنبي","حجّمت من النفوذ الأوروبي",3],
+["تأثرت الصناعة الوطنية في مصر سلبًا نتيجة تطبيق معاهدة بلطة ليمان، ويظهر ذلك من خلال ...","فتح الأسواق أمام المنتجات الأجنبية","توجيه الدعم الحكومي للنشاط الزراعي","انشغال الحكومة بالحروب الخارجية","تغير التركيب المهني للسكان بمصر",3],
+["تجلت الآثار السلبية للديون الأجنبية في عهد الخديو إسماعيل في ...","فقدان الاستقلال المالي والسياسي تدريجيًا","الاعتماد على استيراد المواد الخام","تحرر مصر من التبعية للخلافة العثمانية","ازدهار الصناعة الوطنية",3],
+["شهدت مصر حالة من عدم الاستقرار عقب خروج الحملة الفرنسية نتيجة ...","التنافس الداخلي والخارجي للسيطرة عليها","وجود حركات انفصالية ضد الدولة العثمانية","استخدام محمد علي القوة العسكرية للوصول للحكم","تطلع الزعامة الشعبية لتحقيق طموحاتها السياسية",3],
+["مثّل مجيء الحملة الفرنسية إلى مصر في أواخر القرن 18 نقطة تحول كبرى، حيث تجلى أثرها في ...","الوعي بالتفاوت المعرفي وضرورة إعادة النظر في أدوات التقدم","التخلي التام عن الموروثات الثقافية والتراثية السائدة","تجنب أشكال التواصل مع المجتمع الخارجي","الاكتفاء بالتطور في المجالات الاقتصادية",3],
+["تمكن «محمد علي» من الوصول إلى حكم مصر من خلال الاعتماد على ...","الظهير المجتمعي المحلي والرموز الدينية البارزة","الدعم المالي والتمويل من القوى الإقليمية المجاورة","التحالف الاستراتيجي مع القيادات العسكرية","المعاهدات السياسية مع القوى الدولية",3],
+["إذا كنت مؤرخًا تحلل أسباب سقوط دولة ما، ووجدت أن سيادتها تضاءلت تدريجيًا، فما أثر ستجده في الدولة قبل انهيارها بالكامل؟","فقدان القدرة على اتخاذ القرارات","تدهور الاقتصاد وارتفاع الأسعار","هجرة السكان خارج حدود الدولة","انتشار الفقر والمجاعات",3]
+];
+
+/* ===== المقالي: كل نقطة = نص النموذج + كلمات مفتاحية + عدد الكلمات المطلوبة لاعتبارها كاملة ===== */
+const E = [
+{n:57,l:0,q:"حلل تأثير كل مما يأتي في قوة الدولة عبر التاريخ: (أ) الشعب  (ب) السلطة  (ج) السيادة.",pts:[
+ {t:"الشعب هو الركن الأساسي ومصدر السلطة والسيادة، وكلما زاد وعيه بحقوقه وواجباته قويت الدولة.",k:["شعب","وعي","مصدر السلطة","واجبات","حقوق"],n:2},
+ {t:"الشعب خط الدفاع الأول ضد المحتل.",k:["دفاع","محتل","مقاومة"],n:2},
+ {t:"السلطة تحافظ على النظام وتضع القوانين وتنفذها وتدير شئون الدولة.",k:["نظام","قوانين","تنفيذ","ادارة","شئون"],n:2},
+ {t:"السيادة تعني استقلال الدولة في اتخاذ قراراتها دون الخضوع لسلطة خارجية.",k:["استقلال","قرار","خارجية","خضوع","تبعية"],n:2}]},
+{n:60,l:0,q:"أثبت صحة العبارة: «شكّل التجانس البشري والحضاري للشعب المصري درعًا واقيًا له عبر العصور».",pts:[
+ {t:"انصهر المصريون في بوتقة ثقافية واحدة منذ فجر التاريخ.",k:["انصهر","بوتقة","ثقافية","فجر","تجانس"],n:2},
+ {t:"حافظ ذلك على هويتهم وثقافتهم ولغتهم.",k:["هوية","لغة","ثقافة","حافظ"],n:2},
+ {t:"وذلك رغم تعرضهم لموجات احتلال متتالية: الهكسوس والفرس والإغريق والرومان والفرنسيين والإنجليز.",k:["هكسوس","فرس","اغريق","روم","فرنس","انجليز","بريطان"],n:3}]},
+{n:62,l:0,q:"أثبت صحة العبارة: «شكّلت البيئة الطبيعية لمصر خط دفاع أول ضد الأخطار الخارجية في العصور القديمة».",pts:[
+ {t:"الصحاري الشرقية والغربية حواجز طبيعية يصعب عبورها أمام الجيوش الغازية.",k:["صحار","حواجز","غازية","جيوش","عبور"],n:2},
+ {t:"البحران المتوسط والأحمر حدود منيعة يصعب اختراقها في ذلك الوقت.",k:["متوسط","احمر","بحر","منيعة","اختراق"],n:2},
+ {t:"ذلك وفر الحماية لقلب الدولة (الوادي والدلتا).",k:["وادي","دلتا","قلب","حماية"],n:2},
+ {t:"مما ساعد على استقرار المجتمع والتركيز على الزراعة والعمران ونشأة الدولة واستقرارها.",k:["استقرار","زراعة","عمران","نشأة"],n:2}]},
+{n:66,l:1,q:"ما النتائج المترتبة على غياب ركن السلطة القوية أثناء التهديدات الخارجية؟",pts:[
+ {t:"ضعف الدولة وشيوع الفوضى والانقسامات الداخلية.",k:["ضعف","فوضى","انقسام","تفكك"],n:2},
+ {t:"تشجيع الغزاة على غزو الدولة واختراق حدودها بسهولة.",k:["غزو","غزاة","اختراق","حدود","اطماع"],n:2},
+ {t:"سقوط الدولة تحت الاحتلال والسيطرة الأجنبية كما حدث مع الهكسوس والفرس.",k:["سقوط","احتلال","سيطرة","هكسوس","فرس"],n:2}]},
+{n:67,l:1,q:"دلل بالأمثلة على صحة العبارة: «تدل الشواهد التاريخية على أن سقوط مصر القديمة تحت الاحتلال في بعض الفترات كان نتيجة عوامل داخلية أكثر من كونها عوامل خارجية».",pts:[
+ {t:"الهكسوس: ضعف السلطة المركزية في أواخر عصر الدولة الوسطى شجعهم على التسلل ودخول البلاد واحتلالها.",k:["هكسوس","ضعف","سلطة مركزية","دولة وسطى","تسلل"],n:3},
+ {t:"الفرس: ضعف السلطة المركزية في العصر المتأخر فوقعت البلاد تحت الاحتلال الفارسي.",k:["فرس","عصر متأخر","ضعف","سلطة","انقسام"],n:2}]},
+{n:69,l:0,q:"حلل العبارة مستشهدًا بأدلة تاريخية: «كان موقع مصر الجغرافي سببًا رئيسيًا في تعرضها لغزوات الطامعين».",pts:[
+ {t:"موقعها في قلب العالم القديم وملتقى القارات الثلاث (إفريقيا وآسيا وأوروبا).",k:["قلب العالم","قارات","افريقيا","اسيا","اوروبا","ملتقى"],n:2},
+ {t:"إشرافها على البحرين الأحمر والمتوسط.",k:["احمر","متوسط","بحر"],n:2},
+ {t:"جعلها مركزًا للتبادل التجاري وذات أهمية استراتيجية وعسكرية.",k:["تجار","استراتيج","عسكر","تبادل"],n:2},
+ {t:"الأدلة: غزوات متعاقبة (الهكسوس، الفرس، الإغريق، الرومان، الحملة الفرنسية، ثم الاحتلال البريطاني) بهدف السيطرة على هذا الموقع.",k:["هكسوس","فرس","اغريق","روم","فرنس","بريطان","انجليز"],n:3}]},
+{n:72,l:1,q:"ناقش في ضوء عوامل قيام الدولة المصرية أسباب احتلال الرومان لمصر.",pts:[
+ {t:"الرغبة في السيطرة على الموارد الاقتصادية وخاصة الحبوب لضمان الاستقرار الغذائي للإمبراطورية.",k:["حبوب","غلال","موارد","غذائي","قمح","اقتصاد"],n:2},
+ {t:"ضعف السلطة المركزية والاضطرابات الداخلية والصراع على الحكم أواخر حكم البطالمة.",k:["ضعف","سلطة","اضطراب","صراع","بطالمة","داخلي"],n:2},
+ {t:"الاستفادة من الموقع الجغرافي للتحكم في طرق التجارة بين الشرق والغرب.",k:["موقع","تجار","طرق","شرق","غرب"],n:2}]},
+{n:76,l:3,q:"وضّح تباين تأثير افتتاح قناة السويس على مصر في العصر الحديث.",pts:[
+ {t:"الأثر الإيجابي: زادت أهمية موقعها الاستراتيجي وأصبحت محورًا للتجارة العالمية والملاحة بين الشرق والغرب.",k:["اهمية","موقع","تجار","ملاح","شرق","غرب","استراتيج"],n:3},
+ {t:"الأثر السلبي: أثارت أطماع القوى الاستعمارية الكبرى وعلى رأسها بريطانيا.",k:["اطماع","استعمار","بريطان"],n:2},
+ {t:"أدى ذلك إلى التدخل الأجنبي ثم الاحتلال البريطاني عام 1882م لحماية طريق مواصلاتها إلى الهند.",k:["احتلال","1882","هند","تدخل","طريق"],n:2}]},
+{n:78,l:3,q:"فسّر العلاقة بين: ضعف الدولة الداخلية، وتزايد الأطماع الخارجية.",pts:[
+ {t:"إسراف الخديو إسماعيل في الاستدانة وتراكم الديون وعجزه عن السداد.",k:["اسماعيل","ديون","استدان","عجز","سداد"],n:2},
+ {t:"فتح ذلك الباب للتدخل الأجنبي: صندوق الدين، المراقبة الثنائية، الوزارة المختلطة.",k:["صندوق","مراقبة","وزارة مختلطة","تدخل","اجنبي"],n:2},
+ {t:"وانتهى الأمر بسلب السيادة السياسية والاقتصادية وسقوط البلاد تحت الاحتلال البريطاني عام 1882م.",k:["سيادة","احتلال","1882","بريطان","استقلال"],n:2}]},
+{n:84,l:3,q:"«تطبيق معاهدة بلطة ليمان التي عُقدت عام 1838م». حدد النتيجة المباشرة على الاقتصاد المصري.",pts:[
+ {t:"انهيار نظام الاحتكار الذي طبقه محمد علي.",k:["احتكار","انهيار","الغاء","سقوط"],n:2},
+ {t:"فتح الأسواق المصرية أمام المنتجات الأجنبية وخاصة البريطانية.",k:["اسواق","منتجات","اجنب","بريطان","بضائع"],n:2},
+ {t:"تراجع الصناعة المحلية وإضعاف الاقتصاد القومي.",k:["صناعة","تراجع","ضعف","محلية","وطني"],n:2}]},
+{n:87,l:3,q:"قارن بين أسباب خضوع مصر للاحتلال في العصور القديمة والعصر الحديث من حيث وجه الشبه والاختلاف.",pts:[
+ {t:"وجه الشبه: استغلال الغزاة لضعف السلطة المركزية والصراعات الداخلية في مصر.",k:["ضعف","سلطة","صراع","داخلي","استغلال"],n:2},
+ {t:"وجه الشبه: الطمع في موقع مصر الاستراتيجي وثرواتها.",k:["موقع","ثروات","موارد","اطماع","استراتيج"],n:2},
+ {t:"الاختلاف (قديمًا): غزو عسكري مباشر وسيطرة مباشرة كما فعل الهكسوس والفرس.",k:["عسكري","مباشر","غزو","هكسوس","فرس"],n:2},
+ {t:"الاختلاف (حديثًا): تغلغل مالي واقتصادي عبر الديون قبل الاحتلال العسكري المباشر.",k:["ديون","مالي","اقتصادي","تغلغل","تدخل"],n:2}]},
+{n:93,l:3,q:"إذا كنت مسئولًا، كيف تعالج أزمة الديون التي واجهتها مصر في القرن الـ19م؟",pts:[
+ {t:"ترشيد الإنفاق الحكومي ووقف المشروعات غير الإنتاجية.",k:["ترشيد","انفاق","وقف","مشروعات"],n:2},
+ {t:"استثمار الموارد المتاحة في دعم القطاعات الإنتاجية كالزراعة والصناعة.",k:["استثمار","زراعة","صناعة","انتاج","موارد"],n:2},
+ {t:"الحد من الواردات والتوسع في الصادرات.",k:["واردات","صادرات","استيراد","تصدير"],n:2},
+ {t:"سداد الديون من الفائض الإنتاجي الذاتي في مواعيدها المحددة.",k:["سداد","فائض","مواعيد","ديون"],n:2}]},
+{n:96,l:1,q:"فسّر العلاقة بين: القوة العسكرية وتحقيق الاستقلال في الحضارة المصرية القديمة (مستشهدًا بأدلة تاريخية).",pts:[
+ {t:"القوة العسكرية هي الحامي والضامن الرئيسي لاستقلال الدولة وسيادتها ضد الأخطار الخارجية.",k:["حامي","ضامن","حماية","استقلال","سيادة","اخطار"],n:2},
+ {t:"الدليل: نجح الملك أحمس في تجهيز جيش قوي مزود بالعربات الحربية وطرد الهكسوس واستعاد استقلال مصر.",k:["احمس","هكسوس","عربات","جيش","طرد"],n:3},
+ {t:"أدرك ملوك الدولة الحديثة أهمية تطوير الجيش لحماية الحدود، فأسهم ذلك في بناء أول إمبراطورية في التاريخ.",k:["دولة حديثة","جيش","تطوير","حدود","امبراطورية"],n:2}]},
+{n:99,l:3,q:"ناقش العبارة مدللًا على صحتها: «الموقع الجغرافي لمصر نعمة ونقمة في آن واحد».",pts:[
+ {t:"نعمة: جعل مصر مركزًا للتبادل التجاري والتواصل الحضاري ومنحها مكانة استراتيجية.",k:["نعمة","تجار","حضار","تواصل","مكانة","استراتيج"],n:2},
+ {t:"نقمة: جعلها محط أنظار وأطماع القوى الاستعمارية عبر العصور.",k:["نقمة","اطماع","استعمار","غزو"],n:2},
+ {t:"الدليل: قناة السويس زادت أهمية الموقع التجارية، لكنها كانت السبب الحاسم لطمع بريطانيا في احتلال مصر 1882م لحماية طريق مواصلاتها.",k:["قناة","سويس","بريطان","1882","هند","احتلال"],n:3}]}
+];
+
+/* ============================================================ */
+const $ = id => document.getElementById(id);
+const KEY = "exam:" + CONFIG.EXAM_ID;
+const LET = ["أ","ب","ج","د"];
+const NM = Q.length, NE = E.length;
+const DUR = CONFIG.DURATION_MIN * 60;
+const ESC_MARK = CONFIG.ESSAY_MARKS / NE;
+let S = null, tickId = null, submitting = false;
+
+const esc = s => String(s).replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
+const mmss = s => { s=Math.max(0,s); return String(Math.floor(s/60)).padStart(2,"0")+":"+String(s%60).padStart(2,"0") };
+const r1 = x => Math.round(x*10)/10;
+const save = () => { try{ const c={...S}; delete c.paper; localStorage.setItem(KEY,JSON.stringify(c)) }catch(e){} };
+const load = () => { try{return JSON.parse(localStorage.getItem(KEY))}catch(e){return null} };
+const show = id => { ["s-start","s-exam","s-res"].forEach(x=>$(x).classList.toggle("hide",x!==id)); document.body.classList.toggle("exam-on",id==="s-exam"); };
+function rng(seed){return function(){seed|=0;seed=seed+0x6D2B79F5|0;let t=Math.imul(seed^seed>>>15,1|seed);t=t+Math.imul(t^t>>>7,61|t)^t;return((t^t>>>14)>>>0)/4294967296}}
+function shuffle(a,r){a=a.slice();for(let i=a.length-1;i>0;i--){const j=Math.floor(r()*(i+1));[a[i],a[j]]=[a[j],a[i]]}return a}
+
+/* ---------- الثيم ---------- */
+(function(){ try{ const t=localStorage.getItem("exam-theme"); if(t) document.documentElement.dataset.theme=t; }catch(e){} })();
+function toggleTheme(){ const n=document.documentElement.dataset.theme==="dark"?"light":"dark"; document.documentElement.dataset.theme=n; try{localStorage.setItem("exam-theme",n)}catch(e){} }
+$("b-theme2").onclick = toggleTheme;
+
+/* ---------- تطبيع النص العربي + محرك المقارنة ---------- */
+function normMap(s){
+  let out="", map=[];
+  for(let i=0;i<s.length;i++){
+    let c=s[i];
+    if(/[\u064B-\u065F\u0670\u0640\u0621]/.test(c)) continue;
+    const d="٠١٢٣٤٥٦٧٨٩".indexOf(c);
+    if(d>=0) c=String(d);
+    else if("أإآٱ".includes(c)) c="ا";
+    else if(c==="ى") c="ي"; else if(c==="ة") c="ه"; else if(c==="ؤ") c="و"; else if(c==="ئ") c="ي";
+    else c=c.toLowerCase();
+    out+=c; map.push(i);
+  }
+  return {out,map};
+}
+const norm = s => normMap(s).out;
+const words = t => (t.trim().match(/\S+/g)||[]).length;
+const SEP = /[\s.,،؛:!؟?()\[\]«»"'\-–—\n]/;
+
+function evalEssay(e,text){
+  const ok = words(text) >= CONFIG.MIN_WORDS;
+  const N = ok ? normMap(text).out : "";
+  const pts = e.pts.map(p=>{
+    const hit = p.k.filter(k=>N.includes(norm(k)));
+    const need = p.n || Math.min(2,p.k.length);
+    const r = ok ? Math.min(1, hit.length/need) : 0;
+    return {r, hit, miss:p.k.filter(k=>!hit.includes(k))};
+  });
+  const cov = pts.reduce((a,p)=>a+p.r,0)/pts.length;
+  return {pts, cov, ok, marks: cov*ESC_MARK};
+}
+function highlight(e,text){
+  if(!text.trim()) return '<span class="empty">لم تكتب إجابة.</span>';
+  const {out,map} = normMap(text);
+  let ranges=[];
+  e.pts.forEach(p=>p.k.forEach(k=>{
+    const kn=norm(k); if(!kn) return;
+    let from=0, i;
+    while((i=out.indexOf(kn,from))>=0){
+      let a=map[i], b=map[i+kn.length-1]+1;
+      while(a>0 && !SEP.test(text[a-1])) a--;
+      while(b<text.length && !SEP.test(text[b])) b++;
+      ranges.push([a,b]); from=i+kn.length;
+    }
+  }));
+  ranges.sort((x,y)=>x[0]-y[0]);
+  const merged=[]; ranges.forEach(r=>{ const l=merged[merged.length-1]; if(l && r[0]<=l[1]) l[1]=Math.max(l[1],r[1]); else merged.push(r.slice()); });
+  let h="", pos=0;
+  merged.forEach(([a,b])=>{ h+=esc(text.slice(pos,a))+"<mark>"+esc(text.slice(a,b))+"</mark>"; pos=b; });
+  return h+esc(text.slice(pos));
+}
+function compareHTML(e,text){
+  const ev = evalEssay(e,text);
+  const pct = Math.round(ev.cov*100);
+  const col = pct>=75?"var(--ok)":pct>=40?"var(--warn)":"var(--bad)";
+  return `<div class="cmp">
+    <div class="cmp-top">
+      <div class="cov" style="--p:${pct};--c:${col}"><span>${pct}%</span></div>
+      <div class="t"><b>تغطية نقاط النموذج: ${ev.pts.filter(p=>p.r>=1).length} كاملة · ${ev.pts.filter(p=>p.r>0&&p.r<1).length} جزئية · ${ev.pts.filter(p=>p.r===0).length} ناقصة</b>
+      <div>تقدير الدرجة المبدئي: <b style="color:var(--gold)">${r1(ev.marks)}</b> من ${r1(ESC_MARK)} ${ev.ok?"":"· (الإجابة أقصر من الحد الأدنى "+CONFIG.MIN_WORDS+" كلمات)"}</div></div>
+    </div>
+    <div class="cmp-grid">
+      <div class="col mine"><h4>✍️ إجابتك <span class="wc">(${words(text)} كلمة)</span></h4><div class="mine-t">${highlight(e,text)}</div></div>
+      <div class="col model"><h4>🏆 نموذج الإجابة</h4><ol class="mp">${e.pts.map((p,i)=>{
+        const r=ev.pts[i]; const cls=r.r>=1?"full":r.r>0?"part":"miss"; const lab=r.r>=1?"✔ مذكورة":r.r>0?"◐ جزئية":"✖ ناقصة";
+        return `<li class="${cls}"><span class="bd">${lab}</span>${esc(p.t)}${r.r<1?`<div class="kw">${r.miss.slice(0,5).map(k=>`<em>${esc(k)}</em>`).join("")}</div>`:""}</li>`}).join("")}</ol></div>
+    </div>
+    <div class="legend"><span>🟨 الكلمات المظللة في إجابتك = كلمات مفتاحية مطابقة للنموذج</span><span>الكلمات المنقّطة = كلمات مفتاحية ناقصة في إجابتك</span><span>⚖️ التقدير آلي ومبدئي، والتقييم النهائي للمدرس.</span></div>
+  </div>`;
+}
+
+/* ---------- ورقة الاختيار ---------- */
+function buildPaper(seed){
+  const r = rng(seed);
+  let idx = Q.map((_,i)=>i);
+  if(CONFIG.SHUFFLE_QUESTIONS) idx = shuffle(idx,r);
+  return idx.map(i=>{ const q=Q[i]; let o=[q[1],q[2],q[3],q[4]]; if(CONFIG.SHUFFLE_OPTIONS) o=shuffle(o,r); return {id:i,t:q[0],o,c:q[1],l:q[5]}; });
+}
+
+/* ---------- البداية ---------- */
+$("t-m").textContent = NM; $("t-e").textContent = NE; $("t-t").textContent = CONFIG.DURATION_MIN;
+$("b-start").onclick = () => {
+  const name=$("f-name").value.trim(), phone=$("f-phone").value.replace(/\s|-/g,""), err=$("f-err");
+  err.classList.add("hide");
+  if(name.split(/\s+/).length<2){ err.textContent="اكتب اسمك الثنائي على الأقل."; err.classList.remove("hide"); return; }
+  if(!/^(\+?20|0)?1[0125]\d{8}$/.test(phone)){ err.textContent="اكتب رقم موبايل مصري صحيح."; err.classList.remove("hide"); return; }
+  S={name,phone,grp:$("f-grp").value.trim(),seed:Math.floor(Math.random()*2147483647),startAt:Date.now(),ans:{},es:{},rev:{},sw:0,done:false};
+  save(); startExam();
+};
+
+function startExam(){
+  S.paper = buildPaper(S.seed);
+  show("s-exam"); $("who").textContent = "👤 "+S.name;
+  $("sm-m").textContent = NM+" سؤال · "+CONFIG.MCQ_MARKS+" درجة"; $("sm-e").textContent = NE+" سؤال · "+CONFIG.ESSAY_MARKS+" درجة";
+  renderMCQ(); renderEssays(); renderNav(); updateProgress();
+  clearInterval(tickId); tickId=setInterval(tick,500); tick();
+}
+
+function renderNav(){
+  $("nav").innerHTML = S.paper.map((p,i)=>`<a href="#q${i}" id="n${i}">${i+1}</a>`).join("") + E.map((e,i)=>`<a class="ess" href="#e${i}" id="ne${i}">م${i+1}</a>`).join("");
+}
+
+function renderMCQ(){
+  $("qs").innerHTML = S.paper.map((p,i)=>`
+    <div class="card q" id="q${i}">
+      <div class="qh"><div class="qn">${i+1}</div><div><p class="qt">${esc(p.t)}</p><span class="tag">${LESSONS[p.l].split(":")[0]}</span></div></div>
+      <div class="opts">${p.o.map((o,k)=>`<button class="opt${S.ans[p.id]===o?" sel":""}" data-i="${i}" data-k="${k}"><span class="l">${LET[k]}</span><span>${esc(o)}</span></button>`).join("")}</div>
+    </div>`).join("");
+  $("qs").onclick = ev => {
+    const b=ev.target.closest(".opt"); if(!b||S.done) return;
+    const i=+b.dataset.i,k=+b.dataset.k,p=S.paper[i];
+    S.ans[p.id]=p.o[k]; save();
+    b.parentNode.querySelectorAll(".opt").forEach(x=>x.classList.remove("sel")); b.classList.add("sel");
+    updateProgress();
+  };
+}
+
+function essayCard(i){
+  const e=E[i], txt=S.es[i]||"", revd=!!S.rev[i], lock=revd&&CONFIG.LOCK_AFTER_REVEAL;
+  return `<div class="qh"><div class="qn e">${i+1}</div><div><p class="qt">${esc(e.q)}</p><span class="tag">${LESSONS[e.l].split(":")[0]} · ≈ ${r1(ESC_MARK)} درجة</span></div></div>
+    <div style="margin-top:12px"><textarea data-e="${i}" placeholder="اكتب إجابتك هنا بأسلوبك…" ${lock?"readonly":""}>${esc(txt)}</textarea></div>
+    <div class="eb"><span class="wc" id="wc${i}">${words(txt)} كلمة</span>
+      ${CONFIG.SHOW_MODEL_BEFORE_SUBMIT && !revd ? `<button class="btn ghost sm" data-rev="${i}">📖 نموذج الإجابة + المقارنة</button>`:""}</div>
+    ${lock?'<div class="lockn">🔒 تم فتح نموذج الإجابة، فإجابتك على هذا السؤال اتقفلت.</div>':""}
+    ${revd?compareHTML(e,txt):""}`;
+}
+function renderEssays(){
+  $("es").innerHTML = E.map((e,i)=>`<div class="card q" id="e${i}">${essayCard(i)}</div>`).join("");
+  $("es").oninput = ev => {
+    const t=ev.target; if(t.tagName!=="TEXTAREA"||S.done) return;
+    const i=+t.dataset.e; S.es[i]=t.value; $("wc"+i).textContent=words(t.value)+" كلمة"; save(); updateProgress();
+  };
+  $("es").onclick = ev => {
+    const b=ev.target.closest("[data-rev]"); if(!b||S.done) return;
+    const i=+b.dataset.rev;
+    modal(`<h3 class="gold">فتح نموذج الإجابة؟</h3><p class="sub">هتشوف النموذج ومقارنته بإجابتك دلوقتي${CONFIG.LOCK_AFTER_REVEAL?"، وإجابتك على السؤال ده <b>هتتقفل</b> ومش هتقدر تعدّلها":""}. وده بيتسجّل عند المدرس.</p>
+      <div class="row"><button class="btn" id="m-yes">اعرض النموذج</button><button class="btn ghost" id="m-no">رجوع</button></div>`);
+    $("m-no").onclick=closeModal;
+    $("m-yes").onclick=()=>{ closeModal(); S.rev[i]=true; save(); $("e"+i).innerHTML=essayCard(i); updateProgress(); };
+  };
+}
+
+function updateProgress(){
+  const m=Object.keys(S.ans).length, e=E.filter((_,i)=>words(S.es[i]||"")>=CONFIG.MIN_WORDS).length;
+  $("p-m").textContent=m+"/"+NM; $("p-e").textContent=e+"/"+NE;
+  $("prog").style.width=((m+e)/(NM+NE)*100)+"%";
+  S.paper.forEach((p,i)=>$("n"+i).classList.toggle("done",S.ans[p.id]!==undefined));
+  E.forEach((_,i)=>$("ne"+i).classList.toggle("done",words(S.es[i]||"")>=CONFIG.MIN_WORDS));
+}
+document.querySelectorAll(".tabs .tab").forEach(b=>b.onclick=()=>{
+  document.querySelectorAll(".tabs .tab").forEach(x=>x.classList.toggle("on",x===b));
+  $(b.dataset.go).scrollIntoView({behavior:"smooth",block:"start"});
+});
+
+function tick(){
+  const left = DUR - Math.floor((Date.now()-S.startAt)/1000);
+  $("timer").textContent = mmss(left);
+  $("tm").classList.toggle("low",left<=300);
+  $("ring-t").style.strokeDashoffset = 113.1*(1-Math.max(0,left)/DUR);
+  if(left<=0){ clearInterval(tickId); submit(true); }
+}
+
+/* ---------- كشف الخروج ---------- */
+function onLeave(){
+  if(!S||S.done||$("s-exam").classList.contains("hide")) return;
+  S.sw++; save();
+  const w=$("warn"); w.style.display="block";
+  w.textContent="⚠️ تم تسجيل خروجك من صفحة الامتحان ("+S.sw+" مرة)."+(S.sw>=CONFIG.MAX_SWITCH_WARN?" المدرس هيشوف عدد مرات الخروج.":"");
+}
+document.addEventListener("visibilitychange",()=>{ if(document.hidden) onLeave(); });
+["contextmenu","copy","cut"].forEach(ev=>document.addEventListener(ev,e=>{ if(!$("s-exam").classList.contains("hide") && e.target.tagName!=="TEXTAREA") e.preventDefault(); }));
+
+/* ---------- المودال والتسليم ---------- */
+function modal(h){ $("modal-c").innerHTML=h; $("modal").classList.remove("hide"); }
+function closeModal(){ $("modal").classList.add("hide"); }
+$("b-submit").onclick = () => {
+  const lm=NM-Object.keys(S.ans).length, le=E.filter((_,i)=>words(S.es[i]||"")<CONFIG.MIN_WORDS).length;
+  modal(`<h3 class="gold">تسليم الامتحان؟</h3>
+    <p class="sub">${lm>0?`لسه ${lm} سؤال اختيار من غير إجابة. `:""}${le>0?`و ${le} سؤال مقالي فاضي أو قصير. `:""}${lm+le===0?"جاوبت على كل الأسئلة 👏 ":""}بعد التسليم مش هتقدر تعدّل.</p>
+    <div class="row"><button class="btn" id="m-yes">أيوه، سلّم</button><button class="btn ghost" id="m-no">رجوع</button></div>`);
+  $("m-no").onclick=closeModal; $("m-yes").onclick=()=>{ closeModal(); submit(false); };
+};
+
+function submit(auto){
+  if(submitting||S.done) return; submitting=true; clearInterval(tickId);
+  const used=Math.min(DUR,Math.floor((Date.now()-S.startAt)/1000));
+  const les=LESSONS.map(()=>({got:0,max:0}));
+  const answers=S.paper.map(p=>{ const ch=S.ans[p.id]??null, ok=ch===p.c; les[p.l].max+=1; if(ok) les[p.l].got+=1; return {q:p.id+1,chosen:ch,correct:p.c,ok}; });
+  const mcq=answers.filter(a=>a.ok).length*(CONFIG.MCQ_MARKS/NM);
+  const essays=E.map((e,i)=>{ const t=S.es[i]||"", ev=evalEssay(e,t); les[e.l].got+=ev.marks/ESC_MARK; les[e.l].max+=1;
+    return {id:e.n,text:t,words:words(t),coverage:+ev.cov.toFixed(3),marks:+ev.marks.toFixed(2),revealed:!!S.rev[i],points:ev.pts.map(p=>+p.r.toFixed(2))}; });
+  const essay=essays.reduce((a,x)=>a+x.marks,0);
+  const total=mcq+essay;
+  S.done=true;
+  S.result={
+    exam_id:CONFIG.EXAM_ID,student_name:S.name,phone:S.phone,grp:S.grp||null,
+    score:+total.toFixed(2),total:100,percent:+total.toFixed(2),mcq_score:+mcq.toFixed(2),essay_score:+essay.toFixed(2),
+    time_spent_sec:used,tab_switches:S.sw,auto_submitted:!!auto,
+    lessons:LESSONS.map((n,i)=>({lesson:n,right:+les[i].got.toFixed(2),total:les[i].max})),
+    answers,essays,user_agent:navigator.userAgent.slice(0,200)
+  };
+  S.sent=false; save();
+  S.paper = S.paper || buildPaper(S.seed);
+  showResult(true); sendResult();
+}
+
+/* ---------- Supabase ---------- */
+async function sendResult(){
+  const st=$("r-status"), rb=$("b-retry"); rb.hidden=true;
+  if(S.sent){ st.className="status ok"; st.textContent="✅ نتيجتك اتسجلت عند المدرس."; return; }
+  st.className="status wait"; st.textContent="⏳ جاري إرسال النتيجة للسيرفر...";
+  if(!CONFIG.SUPABASE_ANON_KEY||CONFIG.SUPABASE_ANON_KEY.startsWith("PASTE")){
+    st.className="status err"; st.textContent="⚠️ السيرفر غير مفعّل (مفتاح Supabase ناقص). ابعت نتيجتك للمدرس على واتساب."; return;
+  }
+  try{
+    const res=await fetch(`${CONFIG.SUPABASE_URL}/rest/v1/${CONFIG.TABLE}`,{method:"POST",
+      headers:{"Content-Type":"application/json",apikey:CONFIG.SUPABASE_ANON_KEY,Authorization:"Bearer "+CONFIG.SUPABASE_ANON_KEY,Prefer:"return=minimal"},
+      body:JSON.stringify(S.result)});
+    if(!res.ok) throw new Error(res.status+" "+(await res.text()).slice(0,150));
+    S.sent=true; save(); st.className="status ok"; st.textContent="✅ نتيجتك اتسجلت عند المدرس."; loadLeaderboard();
+  }catch(e){ st.className="status err"; st.textContent="❌ فشل الإرسال للسيرفر. تأكد من النت وأعد المحاولة أو ابعت على واتساب."; rb.hidden=false; console.error(e); }
+}
+$("b-retry").onclick=sendResult;
+
+async function loadLeaderboard(){
+  if(!CONFIG.LEADERBOARD_VIEW) return;
+  try{
+    const u=`${CONFIG.SUPABASE_URL}/rest/v1/${CONFIG.LEADERBOARD_VIEW}?select=first_name,percent,time_spent_sec&exam_id=eq.${encodeURIComponent(CONFIG.EXAM_ID)}&order=percent.desc,time_spent_sec.asc&limit=10`;
+    const r=await fetch(u,{headers:{apikey:CONFIG.SUPABASE_ANON_KEY,Authorization:"Bearer "+CONFIG.SUPABASE_ANON_KEY}});
+    if(!r.ok) return; const d=await r.json(); if(!d.length) return;
+    $("lb").innerHTML="<tr><th>#</th><th>الاسم</th><th>الدرجة</th><th>الوقت</th></tr>"+d.map((x,i)=>`<tr><td>${["🥇","🥈","🥉"][i]||i+1}</td><td>${esc(x.first_name)}</td><td>${r1(+x.percent)}</td><td>${mmss(x.time_spent_sec)}</td></tr>`).join("");
+    $("lb-empty").classList.add("hide");
+  }catch(e){}
+}
+
+/* ---------- النتيجة ---------- */
+function showResult(first){
+  const R=S.result; show("s-res"); window.scrollTo(0,0);
+  $("r-name").textContent="👤 "+R.student_name;
+  $("ring").style.setProperty("--p",R.percent);
+  $("r-pct").textContent=Math.round(R.percent);
+  const p=R.percent;
+  $("r-msg").textContent=p>=90?"🌟 ممتاز! مستوى متميز جدًا":p>=75?"👏 جيد جدًا، كمّل":p>=60?"👍 جيد، راجع نقاط الضعف":p>=50?"⚠️ مقبول، محتاج مذاكرة أكتر":"📚 راجع الوحدة وأعد الدروس";
+  $("r-meta").textContent=(R.auto_submitted?"تسليم تلقائي · ":"")+"خروج من الصفحة: "+R.tab_switches+" مرة";
+  $("r-mcq").textContent=r1(R.mcq_score); $("r-es").textContent=r1(R.essay_score); $("r-time").textContent=mmss(R.time_spent_sec);
+  $("r-les").innerHTML=R.lessons.map(l=>{const pc=l.total?Math.round(l.right/l.total*100):0;return `<div class="lb"><span>${esc(l.lesson)}</span><span>${pc}%</span></div><div class="lbar"><i style="width:${pc}%;background:${pc>=75?"var(--ok)":pc>=50?"var(--warn)":"var(--bad)"}"></i></div>`}).join("");
+  renderReview(false);
+  $("es-review").innerHTML=E.map((e,i)=>`<div class="card"><div class="qh"><div class="qn e">${i+1}</div><div><p class="qt">${esc(e.q)}</p><span class="tag">${LESSONS[e.l].split(":")[0]}${S.rev[i]?" · فتحت النموذج قبل التسليم":""}</span></div></div>${compareHTML(e,S.es[i]||"")}</div>`).join("");
+  if(S.sent){ $("r-status").className="status ok"; $("r-status").textContent="✅ نتيجتك اتسجلت عند المدرس."; loadLeaderboard(); }
+  if(first && p>=75) confetti();
+}
+function renderReview(onlyWrong){
+  $("review").innerHTML=S.paper.map((p,i)=>{
+    const ch=S.ans[p.id], ok=ch===p.c; if(onlyWrong&&ok) return "";
+    return `<div class="card q"><div class="qh"><div class="qn" style="${ok?"":"background:var(--bad);color:#fff"}">${i+1}</div><p class="qt">${esc(p.t)}</p></div>
+      <div class="opts">${p.o.map((o,k)=>`<div class="opt static ${o===p.c?"right":(o===ch?"wrong":"")}"><span class="l">${LET[k]}</span><span>${esc(o)}${o===p.c?" ✔":""}${o===ch&&!ok?" (إجابتك)":""}</span></div>`).join("")}</div>
+      ${ch===undefined?'<div class="lockn">⚠️ لم تُجب على هذا السؤال</div>':""}</div>`;
+  }).join("")||'<div class="status ok">مفيش أسئلة غلط 👏</div>';
+}
+$("b-all").onclick=()=>renderReview(false); $("b-wrong").onclick=()=>renderReview(true);
+document.querySelectorAll("[data-rt]").forEach(b=>b.onclick=()=>{
+  document.querySelectorAll("[data-rt]").forEach(x=>x.classList.toggle("on",x===b));
+  ["rp-sum","rp-mcq","rp-es","rp-lb"].forEach(id=>$(id).classList.toggle("hide",id!==b.dataset.rt));
+});
+
+/* ---------- واتساب / طباعة ---------- */
+$("b-wa").onclick=()=>{
+  const R=S.result;
+  const msg=`📜 نتيجة امتحان التاريخ – الوحدة الأولى\n👤 الاسم: ${R.student_name}\n📞 الموبايل: ${R.phone}\n`+(R.grp?`👥 المجموعة: ${R.grp}\n`:"")+
+    `✅ الدرجة: ${r1(R.score)} / 100\n• الاختيار: ${r1(R.mcq_score)} / ${CONFIG.MCQ_MARKS}\n• المقالي (تقدير مبدئي): ${r1(R.essay_score)} / ${CONFIG.ESSAY_MARKS}\n⏱ الوقت: ${mmss(R.time_spent_sec)}\n`+
+    R.lessons.map(l=>`• ${l.lesson.split(":")[0]}: ${Math.round(l.right/l.total*100)}%`).join("\n")+`\n\nبرعاية المطور: ${CONFIG.SPONSOR}`;
+  const to=CONFIG.TEACHER_WHATSAPP.replace(/\D/g,"");
+  window.open("https://wa.me/"+(to.length>8?to:"")+"?text="+encodeURIComponent(msg),"_blank");
+};
+$("b-share").onclick=()=>window.open("https://wa.me/?text="+encodeURIComponent("📜 امتحان التاريخ – الوحدة الأولى (تانية بكالوريا 2027)\nبرعاية المطور: "+CONFIG.SPONSOR+"\nجرّب نفسك: "+location.origin+location.pathname),"_blank");
+$("b-print").onclick=()=>{ document.querySelectorAll("#rp-mcq,#rp-es,#rp-sum").forEach(x=>x.classList.remove("hide")); window.print(); };
+
+/* ---------- احتفال ---------- */
+function confetti(){
+  const c=$("cf"),x=c.getContext("2d"); c.width=innerWidth; c.height=innerHeight;
+  const P=Array.from({length:130},()=>({x:Math.random()*c.width,y:-20-Math.random()*c.height*.5,v:2+Math.random()*4,s:4+Math.random()*6,a:Math.random()*6,c:["#e5bd5a","#2dd4bf","#fbe9b0","#fb7185","#818cf8"][Math.floor(Math.random()*5)]}));
+  let f=0;(function d(){x.clearRect(0,0,c.width,c.height);P.forEach(p=>{p.y+=p.v;p.x+=Math.sin(p.a+=0.05)*1.5;x.fillStyle=p.c;x.fillRect(p.x,p.y,p.s,p.s*.6)});if(++f<240)requestAnimationFrame(d);else x.clearRect(0,0,c.width,c.height)})();
+}
+
+/* ---------- تشغيل ---------- */
+(function init(){
+  if(new URLSearchParams(location.search).has("retake")){ try{localStorage.removeItem(KEY)}catch(e){} }
+  const old=load(); if(!old){ show("s-start"); return; }
+  S=old; S.paper=buildPaper(S.seed);
+  if(S.done){ showResult(false); if(!S.sent) sendResult(); return; }
+  startExam();
+})();
+</script>
+</body>
+</html>
